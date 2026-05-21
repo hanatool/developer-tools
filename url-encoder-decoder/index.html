@@ -1,79 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free online URL Encoder Decoder tool. Encode or decode URLs instantly with this fast, modern, and responsive Bootstrap tool.">
-    <meta name="keywords" content="URL Encoder, URL Decoder, Encode URL, Decode URL, Online URL Tool, Bootstrap URL Tool">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description"
+        content="Free online URL Encoder and Decoder tool. Easily encode or decode URLs instantly with a modern responsive Bootstrap interface.">
+    <meta name="keywords" content="URL Encoder, URL Decoder, Encode URL, Decode URL, Online URL Tool">
     <meta name="author" content="Hanapha Tools">
     <meta name="robots" content="index, follow">
 
-    <title>URL Encoder Decoder - Free Online Tool</title>
+    <title>URL Encoder & Decoder - Free Online Tool</title>
 
-    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body class="bg-light text-dark">
 
-    <!-- HEADER -->
-    <header class="border-bottom bg-white shadow-sm">
-        <div class="container">
-            <div class="d-flex flex-wrap justify-content-between align-items-center py-3">
-                <a href="#" class="text-decoration-none text-dark">
-                    <h1 class="h3 fw-bold mb-0">
-                        <i class="fa-solid fa-link text-primary me-2"></i>
-                        URL Encoder Decoder
-                    </h1>
-                </a>
 
-                <nav>
-                    <a href="#" class="text-decoration-none text-secondary me-3">Home</a>
-                    <a href="#" class="text-decoration-none text-secondary me-3">Tools</a>
-                    <a href="#" class="text-decoration-none text-secondary">Contact</a>
-                </nav>
+
+        <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                    <i class="fa-solid fa-link text-primary me-2"></i>
+                    URL Encoder & Decoder
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tools</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- HERO -->
     <section class="py-5 bg-white border-bottom">
         <div class="container text-center">
-            <h2 class="fw-bold mb-3">Free Online URL Encoder & Decoder</h2>
-            <p class="text-secondary mx-auto" style="max-width: 750px;">
-                Easily encode or decode URLs instantly with this clean and responsive online tool.
-                Perfect for developers, SEO specialists, students, and anyone working with web links.
+            <h2 class="fw-bold mb-3">
+                Free Online URL Encoder & Decoder
+            </h2>
+
+            <p class="text-secondary mx-auto" style="max-width: 760px;">
+                Easily encode or decode URLs instantly using this fast and modern online tool.
+                Perfect for developers, marketers, students, and anyone working with web links or query strings.
             </p>
         </div>
     </section>
 
-    <!-- MAIN CONTENT -->
+    <!-- MAIN TOOL -->
     <main class="py-5">
         <div class="container">
 
-            <div class="row justify-content-center">
-                <div class="col-lg-9">
+            <!-- ADS TOP -->
+            <div class="bg-white border rounded p-4 text-center mb-4 shadow-sm">
+                <span class="text-muted small d-block mb-2">ADVERTISEMENT</span>
+                <div class="py-4">
+                    <i class="fa-solid fa-rectangle-ad fa-2x text-secondary mb-3"></i>
+                    <p class="mb-0 text-secondary">
+                        Your Ad Banner Here
+                    </p>
+                </div>
+            </div>
 
-                    <!-- TOOL CARD -->
-                    <div class="card border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4 p-lg-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
 
                             <div class="mb-4">
                                 <label class="form-label fw-semibold">
-                                    <i class="fa-solid fa-keyboard me-2 text-primary"></i>
-                                    Input Text or URL
+                                    Enter Text or URL
                                 </label>
 
-                                <textarea 
-                                    id="inputText" 
-                                    class="form-control form-control-lg" 
-                                    rows="7" 
-                                    placeholder="Enter text or URL here..."></textarea>
+                                <textarea id="inputText" class="form-control" rows="8"
+                                    placeholder="Paste your URL or encoded text here..."></textarea>
                             </div>
 
-                            <!-- BUTTONS -->
                             <div class="d-flex flex-wrap gap-2 mb-4">
                                 <button class="btn btn-primary px-4" onclick="encodeURL()">
                                     <i class="fa-solid fa-lock me-2"></i>
@@ -81,69 +106,57 @@
                                 </button>
 
                                 <button class="btn btn-success px-4" onclick="decodeURL()">
-                                    <i class="fa-solid fa-lock-open me-2"></i>
+                                    <i class="fa-solid fa-unlock me-2"></i>
                                     Decode
                                 </button>
 
-                                <button class="btn btn-dark px-4" onclick="copyResult()">
+                                <button class="btn btn-secondary px-4" onclick="copyResult()">
                                     <i class="fa-solid fa-copy me-2"></i>
                                     Copy
                                 </button>
 
-                                <button class="btn btn-outline-secondary px-4" onclick="clearFields()">
+                                <button class="btn btn-outline-danger px-4" onclick="clearFields()">
                                     <i class="fa-solid fa-trash me-2"></i>
                                     Clear
                                 </button>
                             </div>
 
-                            <!-- OUTPUT -->
                             <div>
                                 <label class="form-label fw-semibold">
-                                    <i class="fa-solid fa-file-lines me-2 text-primary"></i>
                                     Result
                                 </label>
 
-                                <textarea 
-                                    id="outputText" 
-                                    class="form-control form-control-lg bg-light" 
-                                    rows="7" 
-                                    placeholder="Result will appear here..." 
-                                    readonly></textarea>
+                                <textarea id="resultText" class="form-control" rows="8"
+                                    placeholder="Result will appear here..." readonly></textarea>
                             </div>
 
                         </div>
                     </div>
 
                     <!-- DESCRIPTION -->
-                    <div class="card border-0 shadow-sm rounded-4 mt-4">
-                        <div class="card-body p-4">
-                            <h3 class="h5 fw-bold mb-3">
-                                <i class="fa-solid fa-circle-info text-primary me-2"></i>
-                                About This Tool
-                            </h3>
+                    <div class="bg-white rounded shadow-sm p-4 mt-4">
+                        <h3 class="h5 fw-bold mb-3">
+                            About This Tool
+                        </h3>
 
-                            <p class="text-secondary mb-0">
-                                This free URL Encoder Decoder tool helps you safely convert URLs into a valid encoded format
-                                and decode encoded links back into readable text. It is useful for web development,
-                                query strings, APIs, SEO optimization, and secure URL handling.
-                            </p>
-                        </div>
+                        <p class="text-secondary mb-0">
+                            This online URL Encoder & Decoder tool helps you safely convert special characters
+                            into URL-compatible formats and decode encoded URLs back into readable text.
+                            It works directly in your browser with no installation required and is fully responsive
+                            for desktop, tablet, and mobile devices.
+                        </p>
                     </div>
 
-                    <!-- AD SPACE -->
-                    <div class="card border-0 shadow-sm rounded-4 mt-4">
-                        <div class="card-body text-center p-5">
-                            <p class="text-uppercase small text-secondary mb-2">
-                                Advertisement Space
-                            </p>
+                    <!-- ADS BOTTOM -->
+                    <div class="bg-white border rounded p-4 text-center mt-4 shadow-sm">
+                        <span class="text-muted small d-block mb-2">ADVERTISEMENT</span>
 
-                            <div class="border rounded-4 bg-light py-5">
-                                <i class="fa-solid fa-rectangle-ad fa-3x text-secondary mb-3"></i>
-                                <h4 class="h5 fw-bold">Your Ad Banner Here</h4>
-                                <p class="text-secondary mb-0">
-                                    Responsive advertisement area for Google AdSense or banner ads.
-                                </p>
-                            </div>
+                        <div class="py-4">
+                            <i class="fa-solid fa-bullhorn fa-2x text-secondary mb-3"></i>
+
+                            <p class="mb-0 text-secondary">
+                                Responsive Ad Space
+                            </p>
                         </div>
                     </div>
 
@@ -157,71 +170,54 @@
     <footer class="bg-white border-top py-4 mt-5">
         <div class="container text-center">
             <p class="mb-2 fw-semibold">
-                URL Encoder Decoder Tool
+                URL Encoder & Decoder Tool
             </p>
 
             <p class="text-secondary small mb-0">
-                © 2026 All Rights Reserved. Built with Bootstrap 5.
+                © 2026 All Rights Reserved.
             </p>
         </div>
     </footer>
 
-    <!-- BOOTSTRAP JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- TOOL SCRIPT -->
+    <!-- SCRIPT -->
     <script>
         function encodeURL() {
             const input = document.getElementById('inputText').value;
 
-            if (!input.trim()) {
-                alert('Please enter text or URL.');
-                return;
-            }
-
             try {
-                document.getElementById('outputText').value = encodeURIComponent(input);
+                document.getElementById('resultText').value = encodeURIComponent(input);
             } catch (error) {
-                alert('Encoding failed.');
+                alert('Unable to encode the text.');
             }
         }
 
         function decodeURL() {
             const input = document.getElementById('inputText').value;
 
-            if (!input.trim()) {
-                alert('Please enter encoded text or URL.');
-                return;
-            }
-
             try {
-                document.getElementById('outputText').value = decodeURIComponent(input);
+                document.getElementById('resultText').value = decodeURIComponent(input);
             } catch (error) {
                 alert('Invalid encoded URL format.');
             }
         }
 
         function copyResult() {
-            const output = document.getElementById('outputText');
+            const result = document.getElementById('resultText');
 
-            if (!output.value.trim()) {
-                alert('Nothing to copy.');
-                return;
-            }
+            result.select();
+            result.setSelectionRange(0, 99999);
 
-            output.select();
-            output.setSelectionRange(0, 99999);
+            navigator.clipboard.writeText(result.value);
 
-            navigator.clipboard.writeText(output.value);
-
-            alert('Result copied successfully.');
+            alert('Result copied to clipboard!');
         }
 
         function clearFields() {
             document.getElementById('inputText').value = '';
-            document.getElementById('outputText').value = '';
+            document.getElementById('resultText').value = '';
         }
     </script>
 
 </body>
+
 </html>
