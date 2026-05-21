@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Free online URL Encoder and Decoder tool. Encode or decode URLs instantly with a modern responsive interface." />
+    <meta name="keywords" content="URL Encoder, URL Decoder, Encode URL, Decode URL, Online Tool" />
+    <meta name="author" content="OpenAI" />
+
+    <title>URL Encoder Decoder</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark d-flex flex-column min-vh-100">
+
+    <!-- Header -->
+    <header class="bg-white border-bottom shadow-sm">
+        <div class="container py-3 d-flex justify-content-between align-items-center">
+            <h1 class="h4 m-0 fw-bold">
+                <i class="fa-solid fa-link text-primary me-2"></i>
+                URL Encoder Decoder
+            </h1>
+
+            <a href="#" class="btn btn-outline-primary btn-sm">
+                <i class="fa-solid fa-house me-1"></i>
+                Home
+            </a>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-grow-1">
+        <div class="container py-5">
+
+            <!-- Description -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Free Online URL Encoder & Decoder</h2>
+                <p class="text-secondary mx-auto" style="max-width: 700px;">
+                    Easily encode or decode URLs instantly using this simple and responsive online tool.
+                    Fast, secure, modern, and completely free to use on desktop or mobile devices.
+                </p>
+            </div>
+
+            <!-- Tool Card -->
+            <div class="card border-0 shadow-sm rounded-4">
+                <div class="card-body p-4">
+
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">
+                            <i class="fa-solid fa-keyboard me-2 text-primary"></i>
+                            Input Text
+                        </label>
+
+                        <textarea 
+                            id="inputText" 
+                            class="form-control form-control-lg" 
+                            rows="6"
+                            placeholder="Enter text or URL here..."
+                        ></textarea>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-2 mb-4">
+                        <button class="btn btn-primary px-4" onclick="encodeURL()">
+                            <i class="fa-solid fa-lock me-2"></i>
+                            Encode
+                        </button>
+
+                        <button class="btn btn-success px-4" onclick="decodeURL()">
+                            <i class="fa-solid fa-lock-open me-2"></i>
+                            Decode
+                        </button>
+
+                        <button class="btn btn-outline-secondary px-4" onclick="copyResult()">
+                            <i class="fa-solid fa-copy me-2"></i>
+                            Copy
+                        </button>
+
+                        <button class="btn btn-outline-danger px-4" onclick="clearFields()">
+                            <i class="fa-solid fa-trash me-2"></i>
+                            Clear
+                        </button>
+                    </div>
+
+                    <div>
+                        <label class="form-label fw-semibold">
+                            <i class="fa-solid fa-file-lines me-2 text-primary"></i>
+                            Result
+                        </label>
+
+                        <textarea 
+                            id="resultText" 
+                            class="form-control form-control-lg bg-light" 
+                            rows="6"
+                            readonly
+                            placeholder="Result will appear here..."
+                        ></textarea>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Advertisement Section -->
+            <div class="mt-5">
+                <div class="card border-0 shadow-sm rounded-4">
+                    <div class="card-body text-center py-5">
+                        <p class="text-secondary mb-2 fw-semibold">
+                            Advertisement Space
+                        </p>
+
+                        <div class="bg-white border rounded-3 d-flex align-items-center justify-content-center mx-auto"
+                             style="height: 120px; max-width: 100%;">
+                            <span class="text-muted">
+                                Your Ad Banner Here
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top mt-auto">
+        <div class="container py-4 text-center">
+            <p class="mb-1 fw-semibold">
+                URL Encoder Decoder Tool
+            </p>
+
+            <small class="text-secondary">
+                © 2026 All Rights Reserved.
+            </small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script -->
+    <script>
+        function encodeURL() {
+            const input = document.getElementById('inputText').value;
+
+            try {
+                document.getElementById('resultText').value = encodeURIComponent(input);
+            } catch (error) {
+                alert('Encoding failed.');
+            }
+        }
+
+        function decodeURL() {
+            const input = document.getElementById('inputText').value;
+
+            try {
+                document.getElementById('resultText').value = decodeURIComponent(input);
+            } catch (error) {
+                alert('Invalid encoded URL.');
+            }
+        }
+
+        function copyResult() {
+            const result = document.getElementById('resultText');
+
+            if (!result.value) {
+                alert('No result to copy.');
+                return;
+            }
+
+            result.select();
+            document.execCommand('copy');
+
+            alert('Copied to clipboard.');
+        }
+
+        function clearFields() {
+            document.getElementById('inputText').value = '';
+            document.getElementById('resultText').value = '';
+        }
+    </script>
+
+</body>
+</html>

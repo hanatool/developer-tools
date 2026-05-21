@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Modern JavaScript Obfuscator Tool with Bootstrap UI" />
+    <meta name="keywords" content="JavaScript Obfuscator, JS Encrypt, Code Protection, Bootstrap Tool" />
+    <meta name="author" content="OpenAI" />
+
+    <title>JavaScript Obfuscator</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light" style="font-family: Inter, sans-serif;">
+
+    <!-- Header -->
+    <header class="border-bottom bg-white shadow-sm">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <div class="d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-primary fs-4"></i>
+                    <h1 class="h4 mb-0 fw-bold">JS Obfuscator</h1>
+                </div>
+
+                <nav class="d-none d-md-flex gap-4">
+                    <a href="#" class="text-decoration-none text-dark">Home</a>
+                    <a href="#" class="text-decoration-none text-dark">Features</a>
+                    <a href="#" class="text-decoration-none text-dark">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <div class="bg-white rounded-4 shadow-sm p-4 p-md-5 border">
+
+                        <div class="text-center mb-5">
+                            <h2 class="fw-bold mb-3">
+                                Protect Your JavaScript Code
+                            </h2>
+
+                            <p class="text-secondary mb-0">
+                                Easily obfuscate and secure your JavaScript source code
+                                using a modern and lightweight interface.
+                            </p>
+                        </div>
+
+                        <!-- Input -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                JavaScript Input
+                            </label>
+
+                            <textarea 
+                                id="inputCode"
+                                class="form-control"
+                                rows="10"
+                                placeholder="Paste your JavaScript code here..."
+                            ></textarea>
+                        </div>
+
+                        <!-- Buttons -->
+                        <div class="d-flex flex-wrap gap-3 mb-4">
+                            <button class="btn btn-primary px-4" onclick="obfuscateCode()">
+                                <i class="fa-solid fa-lock me-2"></i>
+                                Obfuscate
+                            </button>
+
+                            <button class="btn btn-outline-secondary px-4" onclick="copyCode()">
+                                <i class="fa-solid fa-copy me-2"></i>
+                                Copy Result
+                            </button>
+
+                            <button class="btn btn-outline-danger px-4" onclick="clearAll()">
+                                <i class="fa-solid fa-trash me-2"></i>
+                                Clear
+                            </button>
+                        </div>
+
+                        <!-- Output -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">
+                                Obfuscated Output
+                            </label>
+
+                            <textarea 
+                                id="outputCode"
+                                class="form-control"
+                                rows="10"
+                                placeholder="Obfuscated code will appear here..."
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Description -->
+    <section class="pb-5">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-lg-8">
+                    <div class="bg-white border rounded-4 shadow-sm p-4 h-100">
+                        <h3 class="fw-bold mb-3">
+                            About This Tool
+                        </h3>
+
+                        <p class="text-secondary mb-0">
+                            This JavaScript Obfuscator helps developers protect their
+                            source code from being easily read or copied. The tool
+                            converts readable JavaScript into encoded output while
+                            keeping functionality intact.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Ad Space -->
+                <div class="col-lg-4">
+                    <div class="bg-white border rounded-4 shadow-sm p-4 text-center h-100 d-flex flex-column justify-content-center">
+                        <div class="mb-3">
+                            <i class="fa-solid fa-rectangle-ad fs-1 text-primary"></i>
+                        </div>
+
+                        <h5 class="fw-bold">
+                            Advertisement Space
+                        </h5>
+
+                        <p class="text-secondary small mb-0">
+                            300 x 250 Banner Area
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="pb-5">
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="bg-white border rounded-4 shadow-sm p-4 text-center h-100">
+                        <i class="fa-solid fa-bolt text-primary fs-2 mb-3"></i>
+                        <h5 class="fw-bold">Fast</h5>
+                        <p class="text-secondary small mb-0">
+                            Instant JavaScript obfuscation process.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="bg-white border rounded-4 shadow-sm p-4 text-center h-100">
+                        <i class="fa-solid fa-shield text-primary fs-2 mb-3"></i>
+                        <h5 class="fw-bold">Secure</h5>
+                        <p class="text-secondary small mb-0">
+                            Protect your source code from direct reading.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="bg-white border rounded-4 shadow-sm p-4 text-center h-100">
+                        <i class="fa-solid fa-mobile-screen text-primary fs-2 mb-3"></i>
+                        <h5 class="fw-bold">Responsive</h5>
+                        <p class="text-secondary small mb-0">
+                            Optimized for desktop and mobile devices.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-4">
+        <div class="container">
+            <div class="text-center text-secondary small">
+                © 2026 JavaScript Obfuscator. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script -->
+    <script>
+        function obfuscateCode() {
+            const input = document.getElementById('inputCode').value;
+
+            if (!input.trim()) {
+                alert('Please enter JavaScript code.');
+                return;
+            }
+
+            const encoded = btoa(unescape(encodeURIComponent(input)));
+
+            const result =
+                'eval(atob("' + encoded + '"))';
+
+            document.getElementById('outputCode').value = result;
+        }
+
+        function copyCode() {
+            const output = document.getElementById('outputCode');
+
+            output.select();
+            output.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(output.value);
+
+            alert('Obfuscated code copied.');
+        }
+
+        function clearAll() {
+            document.getElementById('inputCode').value = '';
+            document.getElementById('outputCode').value = '';
+        }
+    </script>
+
+</body>
+</html>

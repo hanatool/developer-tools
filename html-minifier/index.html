@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free online HTML Minifier tool to compress and optimize HTML code instantly.">
+    <meta name="keywords" content="HTML Minifier, HTML Compressor, Minify HTML, Online Tool">
+    <meta name="author" content="HTML Minifier">
+    <meta name="robots" content="index, follow">
+
+    <title>HTML Minifier</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body class="bg-light text-dark">
+
+    <!-- Header -->
+    <header class="border-bottom bg-white shadow-sm">
+        <div class="container py-3 d-flex justify-content-between align-items-center">
+            <h1 class="h4 mb-0 fw-bold">
+                <i class="fa-solid fa-code me-2 text-primary"></i>
+                HTML Minifier
+            </h1>
+
+            <nav>
+                <a href="#" class="text-decoration-none text-dark me-3">Home</a>
+                <a href="#" class="text-decoration-none text-dark me-3">Tools</a>
+                <a href="#" class="text-decoration-none text-dark">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="py-5">
+        <div class="container">
+
+            <!-- Description -->
+            <section class="text-center mb-5">
+                <h2 class="fw-bold mb-3">Minify Your HTML Code</h2>
+                <p class="text-secondary mx-auto" style="max-width:700px;">
+                    Compress and optimize your HTML source code instantly with this fast and lightweight HTML Minifier tool.
+                </p>
+            </section>
+
+            <!-- Tool -->
+            <section class="bg-white rounded-4 shadow-sm p-4 mb-5">
+                <div class="row g-4">
+
+                    <!-- Input -->
+                    <div class="col-lg-6">
+                        <label class="form-label fw-semibold">
+                            <i class="fa-solid fa-file-code me-2 text-primary"></i>
+                            Input HTML
+                        </label>
+
+                        <textarea id="inputHtml" class="form-control" rows="14" placeholder="Paste your HTML code here..."></textarea>
+                    </div>
+
+                    <!-- Output -->
+                    <div class="col-lg-6">
+                        <label class="form-label fw-semibold">
+                            <i class="fa-solid fa-compress me-2 text-success"></i>
+                            Minified HTML
+                        </label>
+
+                        <textarea id="outputHtml" class="form-control" rows="14" readonly placeholder="Minified HTML will appear here..."></textarea>
+                    </div>
+
+                </div>
+
+                <!-- Buttons -->
+                <div class="d-flex flex-wrap gap-3 mt-4">
+                    <button class="btn btn-primary px-4" id="minifyBtn">
+                        <i class="fa-solid fa-wand-magic-sparkles me-2"></i>
+                        Minify HTML
+                    </button>
+
+                    <button class="btn btn-outline-secondary px-4" id="copyBtn">
+                        <i class="fa-solid fa-copy me-2"></i>
+                        Copy Result
+                    </button>
+
+                    <button class="btn btn-outline-danger px-4" id="clearBtn">
+                        <i class="fa-solid fa-trash me-2"></i>
+                        Clear
+                    </button>
+                </div>
+            </section>
+
+            <!-- Ad Space -->
+            <section class="mb-5">
+                <div class="bg-white border rounded-4 p-5 text-center shadow-sm">
+                    <p class="text-secondary mb-2">
+                        Advertisement Space
+                    </p>
+
+                    <div class="text-muted">
+                        728 x 90 Banner Ad
+                    </div>
+                </div>
+            </section>
+
+            <!-- Features -->
+            <section class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="bg-white rounded-4 shadow-sm p-4 h-100">
+                        <i class="fa-solid fa-bolt text-warning fs-3 mb-3"></i>
+                        <h3 class="h5 fw-bold">Fast Processing</h3>
+                        <p class="text-secondary mb-0">
+                            Minify HTML code instantly with lightweight client-side processing.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="bg-white rounded-4 shadow-sm p-4 h-100">
+                        <i class="fa-solid fa-shield-halved text-success fs-3 mb-3"></i>
+                        <h3 class="h5 fw-bold">Secure</h3>
+                        <p class="text-secondary mb-0">
+                            Your HTML code stays in your browser and is never uploaded.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="bg-white rounded-4 shadow-sm p-4 h-100">
+                        <i class="fa-solid fa-mobile-screen-button text-primary fs-3 mb-3"></i>
+                        <h3 class="h5 fw-bold">Responsive</h3>
+                        <p class="text-secondary mb-0">
+                            Works perfectly on desktop, tablet, and mobile devices.
+                        </p>
+                    </div>
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1 fw-semibold">
+                HTML Minifier Tool
+            </p>
+
+            <p class="text-secondary mb-0 small">
+                © 2026 All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script -->
+    <script>
+        const inputHtml = document.getElementById('inputHtml');
+        const outputHtml = document.getElementById('outputHtml');
+        const minifyBtn = document.getElementById('minifyBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const clearBtn = document.getElementById('clearBtn');
+
+        minifyBtn.addEventListener('click', () => {
+            let html = inputHtml.value;
+
+            let minified = html
+                .replace(/>\s+</g, '><')
+                .replace(/\n/g, '')
+                .replace(/\s{2,}/g, ' ')
+                .trim();
+
+            outputHtml.value = minified;
+        });
+
+        copyBtn.addEventListener('click', () => {
+            outputHtml.select();
+            document.execCommand('copy');
+
+            copyBtn.innerHTML = '<i class="fa-solid fa-check me-2"></i>Copied';
+            
+            setTimeout(() => {
+                copyBtn.innerHTML = '<i class="fa-solid fa-copy me-2"></i>Copy Result';
+            }, 2000);
+        });
+
+        clearBtn.addEventListener('click', () => {
+            inputHtml.value = '';
+            outputHtml.value = '';
+        });
+    </script>
+
+</body>
+</html>

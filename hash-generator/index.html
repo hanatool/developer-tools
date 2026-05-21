@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Modern Hash Generator Tool with MD5, SHA1, SHA256 and SHA512 support." />
+    <meta name="keywords" content="Hash Generator, MD5, SHA1, SHA256, SHA512, Bootstrap Tool" />
+    <meta name="author" content="Hash Generator" />
+    <meta name="robots" content="index, follow" />
+
+    <title>Hash Generator</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+</head>
+<body class="bg-light text-dark">
+
+    <!-- Header -->
+    <header class="border-bottom bg-white shadow-sm">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center py-3">
+                <a href="#" class="text-decoration-none text-dark fw-bold fs-4">
+                    <i class="fa-solid fa-shield-halved me-2"></i>
+                    Hash Generator
+                </a>
+
+                <nav>
+                    <a href="#" class="text-decoration-none text-secondary me-3">Home</a>
+                    <a href="#" class="text-decoration-none text-secondary me-3">Tools</a>
+                    <a href="#" class="text-decoration-none text-secondary">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="fw-bold mb-3">
+                Modern Hash Generator Tool
+            </h1>
+
+            <p class="text-secondary mx-auto" style="max-width: 700px;">
+                Generate secure hashes instantly using MD5, SHA1, SHA256, and SHA512 algorithms.
+                Fast, responsive, modern, and lightweight interface powered by Bootstrap 5.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="py-5">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <!-- Generator Card -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4">
+                        <div class="card-body p-4">
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    Enter Text
+                                </label>
+
+                                <textarea 
+                                    id="inputText"
+                                    class="form-control rounded-3"
+                                    rows="5"
+                                    placeholder="Type something here..."
+                                ></textarea>
+                            </div>
+
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-3">
+                                    <button class="btn btn-dark w-100 rounded-3" onclick="generateHash('MD5')">
+                                        MD5
+                                    </button>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <button class="btn btn-dark w-100 rounded-3" onclick="generateHash('SHA-1')">
+                                        SHA1
+                                    </button>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <button class="btn btn-dark w-100 rounded-3" onclick="generateHash('SHA-256')">
+                                        SHA256
+                                    </button>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <button class="btn btn-dark w-100 rounded-3" onclick="generateHash('SHA-512')">
+                                        SHA512
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="form-label fw-semibold">
+                                    Generated Hash
+                                </label>
+
+                                <textarea 
+                                    id="outputHash"
+                                    class="form-control rounded-3"
+                                    rows="5"
+                                    readonly
+                                    placeholder="Generated hash will appear here..."
+                                ></textarea>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-3">
+                                About This Tool
+                            </h3>
+
+                            <p class="text-secondary mb-0">
+                                This online hash generator helps developers, students, and cybersecurity enthusiasts
+                                create secure encrypted hash outputs using common hashing algorithms.
+                                The interface is fully responsive, clean, minimal, and optimized for all devices.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Advertisement Area -->
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-3">
+                                <i class="fa-solid fa-rectangle-ad fa-3x text-secondary"></i>
+                            </div>
+
+                            <h5 class="fw-bold">
+                                Advertisement Space
+                            </h5>
+
+                            <p class="text-secondary mb-0">
+                                Your responsive ad banner can be placed here.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1 fw-semibold">
+                Hash Generator Tool
+            </p>
+
+            <p class="text-secondary small mb-0">
+                © 2026 All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Hash Script -->
+    <script>
+        async function generateHash(type) {
+            const input = document.getElementById('inputText').value;
+            const output = document.getElementById('outputHash');
+
+            if (!input.trim()) {
+                output.value = 'Please enter text first.';
+                return;
+            }
+
+            try {
+                const encoder = new TextEncoder();
+                const data = encoder.encode(input);
+
+                if (type === 'MD5') {
+                    output.value = 'MD5 is not supported in Web Crypto API.';
+                    return;
+                }
+
+                const hashBuffer = await crypto.subtle.digest(type, data);
+                const hashArray = Array.from(new Uint8Array(hashBuffer));
+
+                const hashHex = hashArray
+                    .map(byte => byte.toString(16).padStart(2, '0'))
+                    .join('');
+
+                output.value = hashHex;
+
+            } catch (error) {
+                output.value = 'Error generating hash.';
+            }
+        }
+    </script>
+
+</body>
+</html>

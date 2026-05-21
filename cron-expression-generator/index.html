@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Cron Expression Generator</title>
+
+    <meta name="description" content="Generate cron expressions easily with this modern and responsive Cron Expression Generator." />
+    <meta name="keywords" content="cron generator, cron expression, scheduler, bootstrap cron tool" />
+    <meta name="author" content="OpenAI" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2784/2784459.png">
+</head>
+<body class="bg-light text-dark d-flex flex-column min-vh-100">
+
+    <!-- Header -->
+    <header class="bg-white border-bottom shadow-sm">
+        <div class="container py-3 d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-2">
+                <i class="fa-solid fa-clock text-primary fs-4"></i>
+                <h1 class="h4 mb-0 fw-bold">Cron Expression Generator</h1>
+            </div>
+
+            <button class="btn btn-outline-primary btn-sm">
+                <i class="fa-solid fa-code"></i> Generator
+            </button>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main class="flex-grow-1">
+        <div class="container py-5">
+
+            <!-- Description -->
+            <div class="text-center mb-5">
+                <h2 class="fw-bold mb-3">
+                    Generate Cron Expressions Easily
+                </h2>
+
+                <p class="text-secondary mx-auto" style="max-width: 700px;">
+                    Create cron schedules quickly using this clean and responsive cron expression generator.
+                    Select the schedule options below and generate a valid cron expression instantly.
+                </p>
+            </div>
+
+            <!-- Generator Card -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4">
+
+                            <div class="row g-3">
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">
+                                        Minute
+                                    </label>
+
+                                    <input type="number" id="minute" class="form-control" min="0" max="59" value="0">
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">
+                                        Hour
+                                    </label>
+
+                                    <input type="number" id="hour" class="form-control" min="0" max="23" value="0">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold">
+                                        Day
+                                    </label>
+
+                                    <input type="number" id="day" class="form-control" min="1" max="31" value="*">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold">
+                                        Month
+                                    </label>
+
+                                    <input type="number" id="month" class="form-control" min="1" max="12" value="*">
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label class="form-label fw-semibold">
+                                        Weekday
+                                    </label>
+
+                                    <input type="number" id="weekday" class="form-control" min="0" max="6" value="*">
+                                </div>
+
+                                <div class="col-12">
+                                    <button class="btn btn-primary w-100 py-2 fw-semibold" onclick="generateCron()">
+                                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                                        Generate Expression
+                                    </button>
+                                </div>
+
+                                <div class="col-12">
+                                    <label class="form-label fw-semibold">
+                                        Result
+                                    </label>
+
+                                    <div class="input-group">
+                                        <input type="text" id="result" class="form-control" readonly>
+
+                                        <button class="btn btn-outline-secondary" onclick="copyCron()">
+                                            <i class="fa-solid fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Ads Area -->
+            <div class="row justify-content-center mt-5">
+                <div class="col-lg-8">
+
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body text-center py-5">
+
+                            <div class="mb-3">
+                                <i class="fa-solid fa-rectangle-ad text-secondary fs-1"></i>
+                            </div>
+
+                            <h5 class="fw-bold">
+                                Advertisement Space
+                            </h5>
+
+                            <p class="text-secondary mb-0">
+                                Your responsive ad banner can be placed here.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top mt-auto">
+        <div class="container py-4 text-center">
+            <p class="mb-1 fw-semibold">
+                Cron Expression Generator
+            </p>
+
+            <small class="text-secondary">
+                Modern Bootstrap Cron Scheduler Tool © 2026
+            </small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script -->
+    <script>
+        function generateCron() {
+            const minute = document.getElementById('minute').value || '*';
+            const hour = document.getElementById('hour').value || '*';
+            const day = document.getElementById('day').value || '*';
+            const month = document.getElementById('month').value || '*';
+            const weekday = document.getElementById('weekday').value || '*';
+
+            const cron = `${minute} ${hour} ${day} ${month} ${weekday}`;
+
+            document.getElementById('result').value = cron;
+        }
+
+        function copyCron() {
+            const result = document.getElementById('result');
+
+            result.select();
+            result.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(result.value);
+
+            alert('Cron expression copied!');
+        }
+    </script>
+
+</body>
+</html>
