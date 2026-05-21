@@ -2,220 +2,261 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Modern Regex Tester built with Bootstrap. Test regular expressions instantly with live matching results." />
-    <meta name="keywords" content="Regex Tester, Regular Expression, Bootstrap Regex Tool, JavaScript Regex" />
-    <meta name="author" content="OpenAI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Regex Tester</title>
+    <title>Regex Tester - Free Online Regular Expression Tool</title>
+
+    <meta name="description" content="Free online Regex Tester tool to test, validate, and debug regular expressions instantly with live matching results." />
+    <meta name="keywords" content="regex tester, regular expression tester, regex tool, regex validator, regex checker, javascript regex" />
+    <meta name="author" content="Regex Tester" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Regex Tester - Free Online Tool" />
+    <meta property="og:description" content="Test and validate regular expressions instantly with live results." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://example.com/" />
+    <meta property="og:image" content="https://example.com/preview.jpg" />
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-<body class="bg-light text-dark">
+<body class="bg-light">
 
-    <!-- Header -->
-    <header class="border-bottom bg-white shadow-none sticky-top">
-        <div class="container py-3 container">
-            <div class="d-flex align-items-center gap-2">
-                <i class="fa-solid fa-code text-primary fs-4"></i>
-                <h1 class="h4 mb-0 fw-bold">Regex Tester</h1>
-            </div>
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark" href="#">
+                <i class="fa-solid fa-code text-primary me-2"></i>
+                Regex Tester
+            </a>
 
-            <div>
-                <button class="btn btn-outline-primary btn-sm">
-                    <i class="fa-solid fa-flask"></i> Live Test
-                </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tools</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Documentation</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Main -->
-    <main class="flex-grow-1">
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="fw-bold display-5 mb-3">
+                Free Online Regex Tester
+            </h1>
 
-        <!-- Hero -->
-        <section class="py-5">
-            <div class="container">
+            <p class="text-secondary mx-auto" style="max-width: 750px;">
+                Test and debug regular expressions instantly with live matching results.
+                This modern regex testing tool helps developers validate patterns,
+                search text, and improve regular expression workflows quickly and easily.
+            </p>
+        </div>
+    </section>
 
-                <div class="text-center mb-5">
-                    <h2 class="fw-bold mb-3">
-                        Test Your Regular Expressions Instantly
-                    </h2>
+    <!-- MAIN -->
+    <main class="py-5">
+        <div class="container">
 
-                    <p class="text-secondary mx-auto" style="max-width: 720px;">
-                        A simple and modern regex testing tool built with Bootstrap.
-                        Enter your pattern and sample text to instantly view matching results.
-                    </p>
-                </div>
+            <div class="row g-4">
 
-                <div class="row justify-content-center">
-                    <div class="col-lg-10">
+                <!-- LEFT CONTENT -->
+                <div class="col-12 col-lg-8">
 
-                        <div class="card border-0 shadow-sm rounded-4">
-                            <div class="card-body p-4">
+                    <!-- REGEX CARD -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4">
+                        <div class="card-body p-4">
 
-                                <!-- Regex Input -->
-                                <div class="mb-4">
-                                    <label class="form-label fw-semibold">
-                                        Regex Pattern
-                                    </label>
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    Regular Expression
+                                </label>
 
-                                    <div class="input-group">
-                                        <span class="input-group-text bg-white">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                        </span>
-
-                                        <input
-                                            type="text"
-                                            id="regexInput"
-                                            class="form-control"
-                                            placeholder="Example: \\b[a-zA-Z]{5}\\b"
-                                        />
-                                    </div>
-                                </div>
-
-                                <!-- Flags -->
-                                <div class="mb-4">
-                                    <label class="form-label fw-semibold">
-                                        Flags
-                                    </label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-white">
+                                        <i class="fa-solid fa-terminal"></i>
+                                    </span>
 
                                     <input
                                         type="text"
-                                        id="flagsInput"
+                                        id="regexInput"
                                         class="form-control"
-                                        placeholder="Example: gi"
-                                    />
-                                </div>
-
-                                <!-- Test Text -->
-                                <div class="mb-4">
-                                    <label class="form-label fw-semibold">
-                                        Test Text
-                                    </label>
-
-                                    <textarea
-                                        id="testText"
-                                        rows="8"
-                                        class="form-control"
-                                        placeholder="Type or paste your text here..."
-                                    ></textarea>
-                                </div>
-
-                                <!-- Actions -->
-                                <div class="d-flex flex-wrap gap-2 mb-4">
-                                    <button
-                                        class="btn btn-primary"
-                                        onclick="testRegex()"
+                                        placeholder="Example: \\d+"
                                     >
-                                        <i class="fa-solid fa-play"></i>
-                                        Run Test
-                                    </button>
-
-                                    <button
-                                        class="btn btn-outline-secondary"
-                                        onclick="clearFields()"
-                                    >
-                                        <i class="fa-solid fa-trash"></i>
-                                        Clear
-                                    </button>
                                 </div>
-
-                                <!-- Result -->
-                                <div>
-                                    <label class="form-label fw-semibold">
-                                        Results
-                                    </label>
-
-                                    <div
-                                        id="resultBox"
-                                        class="bg-light border rounded-3 p-3 text-secondary"
-                                    >
-                                        Results will appear here...
-                                    </div>
-                                </div>
-
                             </div>
-                        </div>
 
-                    </div>
-                </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    Test String
+                                </label>
 
-            </div>
-        </section>
-
-        <!-- Description -->
-        <section class="pb-5">
-            <div class="container">
-                <div class="row justify-content-center">
-
-                    <div class="col-lg-10">
-
-                        <div class="card border-0 shadow-sm rounded-4">
-                            <div class="card-body p-4">
-
-                                <h3 class="fw-bold mb-3">
-                                    About This Tool
-                                </h3>
-
-                                <p class="text-secondary mb-0">
-                                    This Regex Tester helps developers quickly validate
-                                    and debug regular expressions in real time.
-                                    Built with a clean Bootstrap interface, it supports
-                                    regex flags, live matching, and responsive layouts
-                                    for desktop and mobile devices.
-                                </p>
-
+                                <textarea
+                                    id="testInput"
+                                    class="form-control"
+                                    rows="8"
+                                    placeholder="Type or paste text here..."
+                                ></textarea>
                             </div>
-                        </div>
 
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <button class="btn btn-primary px-4" id="testButton">
+                                    <i class="fa-solid fa-play me-2"></i>
+                                    Test Regex
+                                </button>
+
+                                <button class="btn btn-outline-secondary px-4" id="clearButton">
+                                    <i class="fa-solid fa-trash me-2"></i>
+                                    Clear
+                                </button>
+                            </div>
+
+                            <!-- RESULT -->
+                            <div class="border rounded-4 p-4 bg-light">
+                                <div class="d-flex align-items-center justify-content-between mb-3">
+                                    <h5 class="fw-bold mb-0">
+                                        Matching Results
+                                    </h5>
+
+                                    <span class="badge text-bg-primary" id="matchCount">
+                                        0 Matches
+                                    </span>
+                                </div>
+
+                                <div id="resultBox" class="text-secondary">
+                                    No results yet.
+                                </div>
+                            </div>
+
+                        </div>
                     </div>
 
-                </div>
-            </div>
-        </section>
+                    <!-- DESCRIPTION -->
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4">
+                            <h3 class="fw-bold mb-3">
+                                About This Regex Tool
+                            </h3>
 
-        <!-- Advertisement Area -->
-        <section class="pb-5">
-            <div class="container">
-
-                <div class="card border-0 shadow-sm rounded-4">
-                    <div class="card-body text-center py-5">
-
-                        <p class="text-uppercase text-secondary small mb-2">
-                            Advertisement
-                        </p>
-
-                        <div class="bg-light border rounded-4 p-5">
-                            <i class="fa-solid fa-rectangle-ad fs-1 text-secondary mb-3"></i>
-
-                            <h5 class="fw-semibold">
-                                Your Ad Space Here
-                            </h5>
+                            <p class="text-secondary mb-3">
+                                This free regex tester allows developers, students, and programmers
+                                to test regular expressions in real time. Simply enter a regex pattern,
+                                paste your sample text, and instantly see matching results.
+                            </p>
 
                             <p class="text-secondary mb-0">
-                                Responsive advertisement section for banners or sponsored content.
+                                Regular expressions are commonly used for validation, searching,
+                                parsing text, filtering data, and pattern matching in JavaScript,
+                                Python, PHP, and many other programming languages.
                             </p>
                         </div>
-
                     </div>
+
+                </div>
+
+                <!-- RIGHT -->
+                <div class="col-12 col-lg-4">
+
+                    <!-- ADVERTISEMENT -->
+                    <div class="card border-0 shadow-sm rounded-4 mb-4">
+                        <div class="card-body p-4 text-center">
+
+                            <div class="mb-3">
+                                <span class="badge text-bg-warning">
+                                    Advertisement
+                                </span>
+                            </div>
+
+                            <div class="border rounded-4 bg-light d-flex align-items-center justify-content-center"
+                                 style="height: 280px;">
+
+                                <div>
+                                    <i class="fa-solid fa-rectangle-ad fa-3x text-secondary mb-3"></i>
+
+                                    <p class="text-secondary mb-0">
+                                        300 x 250 Ad Space
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- FEATURES -->
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4">
+
+                            <h4 class="fw-bold mb-4">
+                                Features
+                            </h4>
+
+                            <div class="d-flex mb-3">
+                                <i class="fa-solid fa-check text-success me-3 mt-1"></i>
+                                <div>
+                                    Live regex matching
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <i class="fa-solid fa-check text-success me-3 mt-1"></i>
+                                <div>
+                                    Instant results
+                                </div>
+                            </div>
+
+                            <div class="d-flex mb-3">
+                                <i class="fa-solid fa-check text-success me-3 mt-1"></i>
+                                <div>
+                                    Beginner friendly interface
+                                </div>
+                            </div>
+
+                            <div class="d-flex">
+                                <i class="fa-solid fa-check text-success me-3 mt-1"></i>
+                                <div>
+                                    Fully responsive design
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
-        </section>
 
+        </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-top mt-auto">
-        <div class="container py-4">
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container">
 
             <div class="row align-items-center">
 
-                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     <span class="text-secondary">
                         © 2026 Regex Tester. All rights reserved.
                     </span>
@@ -223,15 +264,15 @@
 
                 <div class="col-md-6 text-center text-md-end">
                     <a href="#" class="text-decoration-none text-secondary me-3">
-                        <i class="fa-brands fa-github"></i>
+                        Privacy Policy
                     </a>
 
                     <a href="#" class="text-decoration-none text-secondary me-3">
-                        <i class="fa-brands fa-linkedin"></i>
+                        Terms
                     </a>
 
                     <a href="#" class="text-decoration-none text-secondary">
-                        <i class="fa-brands fa-twitter"></i>
+                        Contact
                     </a>
                 </div>
 
@@ -240,54 +281,82 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Regex Script -->
+    <!-- SCRIPT -->
     <script>
-        function testRegex() {
-            const regexInput = document.getElementById("regexInput").value;
-            const flagsInput = document.getElementById("flagsInput").value;
-            const testText = document.getElementById("testText").value;
-            const resultBox = document.getElementById("resultBox");
+        const regexInput = document.getElementById("regexInput");
+        const testInput = document.getElementById("testInput");
+        const resultBox = document.getElementById("resultBox");
+        const matchCount = document.getElementById("matchCount");
+
+        document.getElementById("testButton").addEventListener("click", function () {
+
+            const pattern = regexInput.value;
+            const text = testInput.value;
+
+            if (!pattern || !text) {
+                resultBox.innerHTML = '<div class="text-danger">Please enter both regex pattern and test text.</div>';
+                matchCount.innerText = "0 Matches";
+                return;
+            }
 
             try {
-                const regex = new RegExp(regexInput, flagsInput);
-                const matches = testText.match(regex);
 
-                if (matches) {
-                    resultBox.innerHTML = `
-                        <div class="text-success fw-semibold mb-2">
-                            Match Found (${matches.length})
-                        </div>
-                        <pre class="mb-0">${JSON.stringify(matches, null, 2)}</pre>
-                    `;
+                const regex = new RegExp(pattern, "g");
+                const matches = text.match(regex);
+
+                if (matches && matches.length > 0) {
+
+                    let html = '<ul class="list-group">';
+
+                    matches.forEach((match, index) => {
+                        html += `
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <span>${match}</span>
+                                <span class="badge text-bg-primary rounded-pill">
+                                    ${index + 1}
+                                </span>
+                            </li>
+                        `;
+                    });
+
+                    html += '</ul>';
+
+                    resultBox.innerHTML = html;
+                    matchCount.innerText = matches.length + " Matches";
+
                 } else {
-                    resultBox.innerHTML = `
-                        <div class="text-danger fw-semibold">
-                            No matches found.
-                        </div>
-                    `;
+
+                    resultBox.innerHTML = '<div class="text-warning">No matches found.</div>';
+                    matchCount.innerText = "0 Matches";
+
                 }
 
             } catch (error) {
+
                 resultBox.innerHTML = `
-                    <div class="text-danger fw-semibold">
+                    <div class="alert alert-danger mb-0">
                         Invalid Regex: ${error.message}
                     </div>
                 `;
+
+                matchCount.innerText = "Error";
             }
-        }
 
-        function clearFields() {
-            document.getElementById("regexInput").value = "";
-            document.getElementById("flagsInput").value = "";
-            document.getElementById("testText").value = "";
+        });
 
-            document.getElementById("resultBox").innerHTML =
-                "Results will appear here...";
-        }
+        document.getElementById("clearButton").addEventListener("click", function () {
+
+            regexInput.value = "";
+            testInput.value = "";
+
+            resultBox.innerHTML = "No results yet.";
+            matchCount.innerText = "0 Matches";
+
+        });
     </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

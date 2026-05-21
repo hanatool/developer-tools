@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
+    <meta name="description" content="Free User Agent Parser tool to analyze browser, operating system, device, and rendering engine information instantly.">
+    <meta name="keywords" content="user agent parser, browser detector, device checker, operating system parser, bootstrap tool">
+    <meta name="author" content="User Agent Parser">
+    <meta name="robots" content="index, follow">
+
+    <title>User-Agent Parser Tool</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- UA Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.39/src/ua-parser.min.js"></script>
+</head>
+<body class="bg-light text-dark">
+
+    <!-- HEADER -->
+    <header class="border-bottom bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    <i class="fa-solid fa-microchip me-2 text-primary"></i>
+                    User-Agent Parser
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="fw-bold display-5 mb-3">
+                Free User-Agent Parser Tool
+            </h1>
+
+            <p class="lead text-secondary mx-auto" style="max-width: 850px;">
+                Detect and analyze browser information, operating system, rendering engine,
+                CPU architecture, and device type instantly using this modern User-Agent Parser tool.
+            </p>
+
+            <div class="mt-4">
+                <button class="btn btn-primary btn-lg px-4" onclick="parseUserAgent()">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i>
+                    Analyze User-Agent
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- AD SPACE TOP -->
+    <section class="py-4">
+        <div class="container">
+            <div class="bg-white border rounded-4 p-4 text-center shadow-sm">
+                <span class="badge bg-warning text-dark mb-3">Advertisement</span>
+                <h5 class="fw-bold">Responsive Ad Space</h5>
+                <p class="text-secondary mb-0">
+                    Place your banner advertisement, affiliate promotion,
+                    or Google AdSense unit here.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="py-4">
+        <div class="container">
+
+            <!-- USER AGENT INPUT -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+                <div class="card-body p-4">
+
+                    <h3 class="fw-bold mb-3">
+                        <i class="fa-solid fa-code me-2 text-primary"></i>
+                        User-Agent Input
+                    </h3>
+
+                    <textarea
+                        id="userAgentInput"
+                        class="form-control form-control-lg"
+                        rows="6"
+                        placeholder="Paste a user-agent string here or use your current browser user-agent automatically."
+                    ></textarea>
+
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+                        <button class="btn btn-primary" onclick="parseUserAgent()">
+                            <i class="fa-solid fa-play me-2"></i>
+                            Parse Now
+                        </button>
+
+                        <button class="btn btn-outline-secondary" onclick="loadCurrentUA()">
+                            <i class="fa-solid fa-laptop me-2"></i>
+                            Use Current Browser
+                        </button>
+
+                        <button class="btn btn-outline-danger" onclick="clearInput()">
+                            <i class="fa-solid fa-trash me-2"></i>
+                            Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RESULTS -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+                <div class="card-body p-4">
+
+                    <h3 class="fw-bold mb-4">
+                        <i class="fa-solid fa-circle-info me-2 text-success"></i>
+                        Parsed Results
+                    </h3>
+
+                    <div class="row g-4">
+
+                        <div class="col-md-6">
+                            <div class="border rounded-4 p-4 h-100 bg-white">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="fa-solid fa-globe me-2 text-primary"></i>
+                                    Browser
+                                </h5>
+
+                                <p><strong>Name:</strong> <span id="browserName">-</span></p>
+                                <p><strong>Version:</strong> <span id="browserVersion">-</span></p>
+                                <p class="mb-0"><strong>Engine:</strong> <span id="engineName">-</span></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="border rounded-4 p-4 h-100 bg-white">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="fa-solid fa-desktop me-2 text-success"></i>
+                                    Operating System
+                                </h5>
+
+                                <p><strong>OS Name:</strong> <span id="osName">-</span></p>
+                                <p><strong>OS Version:</strong> <span id="osVersion">-</span></p>
+                                <p class="mb-0"><strong>CPU:</strong> <span id="cpuArch">-</span></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="border rounded-4 p-4 h-100 bg-white">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="fa-solid fa-mobile-screen-button me-2 text-danger"></i>
+                                    Device
+                                </h5>
+
+                                <p><strong>Type:</strong> <span id="deviceType">-</span></p>
+                                <p><strong>Vendor:</strong> <span id="deviceVendor">-</span></p>
+                                <p class="mb-0"><strong>Model:</strong> <span id="deviceModel">-</span></p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="border rounded-4 p-4 h-100 bg-white">
+                                <h5 class="fw-bold mb-3">
+                                    <i class="fa-solid fa-microchip me-2 text-warning"></i>
+                                    Rendering Engine
+                                </h5>
+
+                                <p><strong>Name:</strong> <span id="engineTitle">-</span></p>
+                                <p class="mb-0"><strong>Version:</strong> <span id="engineVersion">-</span></p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="card border-0 shadow-sm rounded-4 mb-4">
+                <div class="card-body p-4">
+                    <h3 class="fw-bold mb-3">
+                        <i class="fa-solid fa-book-open me-2 text-info"></i>
+                        About This Tool
+                    </h3>
+
+                    <p class="text-secondary mb-0">
+                        This User-Agent Parser tool helps developers, marketers,
+                        analysts, and website owners identify browser details,
+                        operating systems, mobile devices, and rendering engines
+                        from user-agent strings. It is useful for debugging,
+                        compatibility testing, analytics, and responsive web development.
+                    </p>
+                </div>
+            </div>
+
+            <!-- AD SPACE BOTTOM -->
+            <div class="bg-white border rounded-4 p-4 text-center shadow-sm">
+                <span class="badge bg-warning text-dark mb-3">Advertisement</span>
+
+                <h5 class="fw-bold">
+                    728x90 or Responsive Ad Banner
+                </h5>
+
+                <p class="text-secondary mb-0">
+                    This section is ready for ad networks,
+                    sponsored content, or promotional banners.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container text-center">
+
+            <h5 class="fw-bold mb-3">
+                User-Agent Parser
+            </h5>
+
+            <p class="text-secondary mb-3">
+                Modern responsive Bootstrap tool for parsing user-agent strings.
+            </p>
+
+            <div class="d-flex justify-content-center gap-3 mb-3">
+                <a href="#" class="text-decoration-none text-dark">
+                    <i class="fab fa-facebook fa-lg"></i>
+                </a>
+
+                <a href="#" class="text-decoration-none text-dark">
+                    <i class="fab fa-twitter fa-lg"></i>
+                </a>
+
+                <a href="#" class="text-decoration-none text-dark">
+                    <i class="fab fa-instagram fa-lg"></i>
+                </a>
+
+                <a href="#" class="text-decoration-none text-dark">
+                    <i class="fab fa-github fa-lg"></i>
+                </a>
+            </div>
+
+            <small class="text-secondary">
+                © 2026 User-Agent Parser. All rights reserved.
+            </small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script -->
+    <script>
+        function loadCurrentUA() {
+            document.getElementById('userAgentInput').value = navigator.userAgent;
+            parseUserAgent();
+        }
+
+        function clearInput() {
+            document.getElementById('userAgentInput').value = '';
+
+            document.getElementById('browserName').innerText = '-';
+            document.getElementById('browserVersion').innerText = '-';
+            document.getElementById('engineName').innerText = '-';
+
+            document.getElementById('osName').innerText = '-';
+            document.getElementById('osVersion').innerText = '-';
+            document.getElementById('cpuArch').innerText = '-';
+
+            document.getElementById('deviceType').innerText = '-';
+            document.getElementById('deviceVendor').innerText = '-';
+            document.getElementById('deviceModel').innerText = '-';
+
+            document.getElementById('engineTitle').innerText = '-';
+            document.getElementById('engineVersion').innerText = '-';
+        }
+
+        function parseUserAgent() {
+            const uaString = document.getElementById('userAgentInput').value || navigator.userAgent;
+
+            const parser = new UAParser(uaString);
+            const result = parser.getResult();
+
+            document.getElementById('browserName').innerText = result.browser.name || '-';
+            document.getElementById('browserVersion').innerText = result.browser.version || '-';
+            document.getElementById('engineName').innerText = result.engine.name || '-';
+
+            document.getElementById('osName').innerText = result.os.name || '-';
+            document.getElementById('osVersion').innerText = result.os.version || '-';
+            document.getElementById('cpuArch').innerText = result.cpu.architecture || '-';
+
+            document.getElementById('deviceType').innerText = result.device.type || 'Desktop';
+            document.getElementById('deviceVendor').innerText = result.device.vendor || '-';
+            document.getElementById('deviceModel').innerText = result.device.model || '-';
+
+            document.getElementById('engineTitle').innerText = result.engine.name || '-';
+            document.getElementById('engineVersion').innerText = result.engine.version || '-';
+        }
+
+        window.onload = function () {
+            loadCurrentUA();
+        };
+    </script>
+
+</body>
+</html>

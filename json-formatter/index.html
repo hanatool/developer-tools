@@ -1,184 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free modern JSON Formatter tool with responsive design." />
-    <meta name="keywords" content="JSON Formatter, JSON Beautifier, JSON Viewer" />
-    <meta name="author" content="JSON Formatter" />
+    <meta name="description" content="Free online JSON Formatter tool to beautify, validate, and organize JSON data instantly with a clean modern interface.">
+    <meta name="keywords" content="JSON Formatter, JSON Beautifier, JSON Validator, Online JSON Tool, Format JSON">
+    <meta name="author" content="JSON Formatter Tool">
+    <meta name="robots" content="index, follow">
 
-    <title>JSON Formatter</title>
+    <title>JSON Formatter - Free Online JSON Beautifier</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-</head>
-<body class="bg-light text-dark">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- Header -->
-    <header class="border-bottom bg-white shadow-none sticky-top">
+</head>
+<body class="bg-light">
+
+    <!-- HEADER -->
+    <header class="border-bottom bg-white sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
-                <h1 class="h4 mb-0 fw-bold">
+                <a class="navbar-brand fw-bold" href="#">
                     <i class="fa-solid fa-code text-primary me-2"></i>
                     JSON Formatter
-                </h1>
+                </a>
 
-                <button class="btn btn-primary btn-sm" id="formatBtn">
-                    <i class="fa-solid fa-wand-magic-sparkles me-1"></i>
-                    Format JSON
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main -->
-    <main class="flex-grow-1">
-        <div class="container py-5">
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="fw-bold mb-3">Free Online JSON Formatter</h1>
+            <p class="text-secondary mx-auto" style="max-width: 750px;">
+                Beautify, validate, and organize your JSON data instantly with this modern and responsive JSON Formatter tool. 
+                Perfect for developers, students, and API testing workflows.
+            </p>
+        </div>
+    </section>
 
-            <!-- Description -->
-            <div class="text-center mb-5">
-                <h2 class="fw-bold mb-3">Modern JSON Formatter Tool</h2>
-                <p class="text-secondary mx-auto" style="max-width: 700px;">
-                    Beautify, validate, and organize your JSON data instantly with this clean and responsive JSON Formatter.
-                </p>
-            </div>
+    <!-- MAIN CONTENT -->
+    <main class="py-5">
+        <div class="container">
 
-            <!-- Ad Space Top -->
-            <div class="bg-white border rounded-4 p-4 text-center mb-4 shadow-sm">
-                <small class="text-muted d-block mb-2">Advertisement Space</small>
+            <!-- ADVERTISEMENT TOP -->
+            <div class="bg-white border rounded p-4 text-center mb-4">
+                <span class="badge bg-warning text-dark mb-2">Advertisement</span>
                 <div class="text-secondary">
-                    728 x 90 Banner Ad
+                    728x90 Ad Space
                 </div>
             </div>
 
-            <!-- Formatter -->
-            <div class="row g-4">
-                <div class="col-12">
-                    <div class="card border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4">
+            <!-- TOOL CARD -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-4">
 
+                    <div class="row g-4">
+
+                        <!-- INPUT -->
+                        <div class="col-lg-6">
                             <label class="form-label fw-semibold">
                                 <i class="fa-solid fa-file-code me-2 text-primary"></i>
-                                Paste JSON
+                                JSON Input
                             </label>
 
                             <textarea 
                                 id="jsonInput"
-                                class="form-control mb-3"
-                                rows="12"
-                                placeholder='{"name":"John","age":25}'
+                                class="form-control"
+                                rows="18"
+                                placeholder='Paste your JSON here...'
                             ></textarea>
-
-                            <div class="d-flex flex-wrap gap-2 mb-3">
-                                <button class="btn btn-primary" id="beautifyBtn">
-                                    <i class="fa-solid fa-check me-1"></i>
-                                    Beautify
-                                </button>
-
-                                <button class="btn btn-outline-secondary" id="minifyBtn">
-                                    <i class="fa-solid fa-compress me-1"></i>
-                                    Minify
-                                </button>
-
-                                <button class="btn btn-outline-danger" id="clearBtn">
-                                    <i class="fa-solid fa-trash me-1"></i>
-                                    Clear
-                                </button>
-
-                                <button class="btn btn-outline-success" id="copyBtn">
-                                    <i class="fa-solid fa-copy me-1"></i>
-                                    Copy
-                                </button>
-                            </div>
-
-                            <div id="alertBox"></div>
-
                         </div>
+
+                        <!-- OUTPUT -->
+                        <div class="col-lg-6">
+                            <label class="form-label fw-semibold">
+                                <i class="fa-solid fa-code me-2 text-success"></i>
+                                Formatted Output
+                            </label>
+
+                            <textarea 
+                                id="jsonOutput"
+                                class="form-control"
+                                rows="18"
+                                readonly
+                                placeholder="Formatted JSON will appear here..."
+                            ></textarea>
+                        </div>
+
+                    </div>
+
+                    <!-- BUTTONS -->
+                    <div class="d-flex flex-wrap gap-2 mt-4">
+
+                        <button class="btn btn-primary" onclick="formatJSON()">
+                            <i class="fa-solid fa-wand-magic-sparkles me-2"></i>
+                            Format JSON
+                        </button>
+
+                        <button class="btn btn-success" onclick="copyJSON()">
+                            <i class="fa-solid fa-copy me-2"></i>
+                            Copy
+                        </button>
+
+                        <button class="btn btn-outline-secondary" onclick="clearJSON()">
+                            <i class="fa-solid fa-trash me-2"></i>
+                            Clear
+                        </button>
+
+                    </div>
+
+                    <!-- STATUS -->
+                    <div id="statusMessage" class="mt-3"></div>
+
+                </div>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body p-4">
+                    <h2 class="h4 fw-bold mb-3">About This Tool</h2>
+
+                    <p class="text-secondary mb-3">
+                        This JSON Formatter helps you clean and structure JSON data with proper indentation and validation. 
+                        It is useful for debugging APIs, editing configuration files, and improving code readability.
+                    </p>
+
+                    <div class="row g-3">
+
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 h-100 bg-light">
+                                <i class="fa-solid fa-check text-success mb-2"></i>
+                                <h3 class="h6 fw-bold">JSON Validation</h3>
+                                <p class="text-secondary small mb-0">
+                                    Detect invalid JSON structures instantly.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 h-100 bg-light">
+                                <i class="fa-solid fa-bolt text-primary mb-2"></i>
+                                <h3 class="h6 fw-bold">Fast Formatting</h3>
+                                <p class="text-secondary small mb-0">
+                                    Beautify large JSON data within seconds.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="border rounded p-3 h-100 bg-light">
+                                <i class="fa-solid fa-mobile-screen text-dark mb-2"></i>
+                                <h3 class="h6 fw-bold">Responsive Design</h3>
+                                <p class="text-secondary small mb-0">
+                                    Optimized for desktop, tablet, and mobile devices.
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
 
-            <!-- Ad Space Bottom -->
-            <div class="bg-white border rounded-4 p-4 text-center mt-4 shadow-sm">
-                <small class="text-muted d-block mb-2">Advertisement Space</small>
+            <!-- ADVERTISEMENT BOTTOM -->
+            <div class="bg-white border rounded p-4 text-center">
+                <span class="badge bg-warning text-dark mb-2">Advertisement</span>
                 <div class="text-secondary">
-                    Responsive Ad Area
+                    Responsive Ad Space
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-top mt-auto">
-        <div class="container py-3 text-center">
-            <small class="text-muted">
-                © 2026 JSON Formatter. All rights reserved.
-            </small>
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-1 fw-semibold">
+                JSON Formatter Tool
+            </p>
+
+            <p class="text-secondary small mb-0">
+                Free online tool for formatting and validating JSON data.
+            </p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script -->
+    <!-- JSON FORMATTER SCRIPT -->
     <script>
-        const jsonInput = document.getElementById('jsonInput');
-        const beautifyBtn = document.getElementById('beautifyBtn');
-        const minifyBtn = document.getElementById('minifyBtn');
-        const clearBtn = document.getElementById('clearBtn');
-        const copyBtn = document.getElementById('copyBtn');
-        const formatBtn = document.getElementById('formatBtn');
-        const alertBox = document.getElementById('alertBox');
 
-        function showAlert(message, type) {
-            alertBox.innerHTML = `
-                <div class="alert alert-${type} mt-3" role="alert">
-                    ${message}
+        function formatJSON() {
+            const input = document.getElementById('jsonInput').value;
+            const output = document.getElementById('jsonOutput');
+            const status = document.getElementById('statusMessage');
+
+            try {
+                const parsed = JSON.parse(input);
+                const formatted = JSON.stringify(parsed, null, 4);
+
+                output.value = formatted;
+
+                status.innerHTML = `
+                    <div class="alert alert-success mb-0">
+                        <i class="fa-solid fa-circle-check me-2"></i>
+                        JSON formatted successfully.
+                    </div>
+                `;
+
+            } catch (error) {
+
+                output.value = "";
+
+                status.innerHTML = `
+                    <div class="alert alert-danger mb-0">
+                        <i class="fa-solid fa-circle-exclamation me-2"></i>
+                        Invalid JSON: ${error.message}
+                    </div>
+                `;
+            }
+        }
+
+        function copyJSON() {
+            const output = document.getElementById('jsonOutput');
+
+            if (output.value.trim() === "") {
+                return;
+            }
+
+            output.select();
+            output.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(output.value);
+
+            document.getElementById('statusMessage').innerHTML = `
+                <div class="alert alert-info mb-0">
+                    <i class="fa-solid fa-copy me-2"></i>
+                    Formatted JSON copied to clipboard.
                 </div>
             `;
         }
 
-        function beautifyJSON() {
-            try {
-                const parsed = JSON.parse(jsonInput.value);
-                jsonInput.value = JSON.stringify(parsed, null, 4);
-                showAlert('JSON formatted successfully.', 'success');
-            } catch (error) {
-                showAlert('Invalid JSON format.', 'danger');
-            }
+        function clearJSON() {
+            document.getElementById('jsonInput').value = "";
+            document.getElementById('jsonOutput').value = "";
+            document.getElementById('statusMessage').innerHTML = "";
         }
 
-        function minifyJSON() {
-            try {
-                const parsed = JSON.parse(jsonInput.value);
-                jsonInput.value = JSON.stringify(parsed);
-                showAlert('JSON minified successfully.', 'success');
-            } catch (error) {
-                showAlert('Invalid JSON format.', 'danger');
-            }
-        }
-
-        beautifyBtn.addEventListener('click', beautifyJSON);
-        formatBtn.addEventListener('click', beautifyJSON);
-
-        minifyBtn.addEventListener('click', () => {
-            minifyJSON();
-        });
-
-        clearBtn.addEventListener('click', () => {
-            jsonInput.value = '';
-            alertBox.innerHTML = '';
-        });
-
-        copyBtn.addEventListener('click', () => {
-            navigator.clipboard.writeText(jsonInput.value);
-
-            showAlert('JSON copied to clipboard.', 'primary');
-        });
     </script>
 
 </body>

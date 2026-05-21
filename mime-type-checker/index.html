@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
+    <meta name="description" content="Free online MIME Type Checker tool to instantly detect file MIME types based on extensions. Fast, responsive, and modern Bootstrap design.">
+    <meta name="keywords" content="mime type checker, file mime type, mime detector, extension checker, bootstrap tool">
+    <meta name="author" content="Hanapha Tools">
+    <meta name="robots" content="index, follow">
+
+    <title>MIME Type Checker - Free Online Tool</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body class="bg-light text-dark">
+
+    <!-- HEADER -->
+    <header class="border-bottom bg-white sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light container py-3">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fa-solid fa-file-circle-check text-primary me-2"></i>
+                MIME Type Checker
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="fw-bold mb-3">
+                Free MIME Type Checker
+            </h1>
+
+            <p class="text-secondary mx-auto" style="max-width: 700px;">
+                Instantly detect MIME types from file extensions using this fast and modern online MIME Type Checker tool.
+                Perfect for developers, website owners, students, and content creators.
+            </p>
+        </div>
+    </section>
+
+    <!-- ADVERTISEMENT -->
+    <section class="py-4">
+        <div class="container">
+            <div class="border rounded-4 bg-white p-4 text-center shadow-sm">
+                <p class="text-uppercase small text-secondary mb-2">
+                    Advertisement
+                </p>
+
+                <div class="py-5">
+                    <i class="fa-solid fa-rectangle-ad fa-3x text-secondary mb-3"></i>
+                    <h5 class="fw-semibold">728 x 90 Ad Space</h5>
+                    <p class="text-secondary mb-0">
+                        Place your banner advertisement here
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN TOOL -->
+    <main class="py-4">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4 p-md-5">
+
+                            <div class="text-center mb-4">
+                                <h2 class="fw-bold">
+                                    Check MIME Type
+                                </h2>
+
+                                <p class="text-secondary">
+                                    Enter a file extension to detect its MIME type.
+                                </p>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    File Extension
+                                </label>
+
+                                <div class="input-group input-group-lg">
+                                    <span class="input-group-text bg-white">
+                                        <i class="fa-solid fa-file"></i>
+                                    </span>
+
+                                    <input 
+                                        type="text" 
+                                        id="extensionInput"
+                                        class="form-control"
+                                        placeholder="Example: jpg, png, pdf"
+                                    >
+
+                                    <button class="btn btn-primary px-4" id="checkBtn">
+                                        <i class="fa-solid fa-magnifying-glass me-2"></i>
+                                        Check
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="resultBox" class="d-none">
+                                <div class="alert alert-light border rounded-4 p-4 mb-0">
+                                    <h5 class="fw-bold mb-3">
+                                        Detection Result
+                                    </h5>
+
+                                    <div class="mb-2">
+                                        <strong>Extension:</strong>
+                                        <span id="extensionResult"></span>
+                                    </div>
+
+                                    <div>
+                                        <strong>MIME Type:</strong>
+                                        <span id="mimeResult" class="text-primary fw-semibold"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="errorBox" class="d-none mt-4">
+                                <div class="alert alert-danger rounded-4 mb-0">
+                                    Unknown extension. Please try another file extension.
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- DESCRIPTION -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+
+                    <div class="bg-white border rounded-4 p-4 p-md-5 shadow-sm">
+                        <h3 class="fw-bold mb-3">
+                            About This Tool
+                        </h3>
+
+                        <p class="text-secondary mb-3">
+                            MIME Type Checker helps identify the correct MIME type based on a file extension.
+                            MIME types are essential for web development, file uploads, APIs, email attachments,
+                            and browser compatibility.
+                        </p>
+
+                        <p class="text-secondary mb-0">
+                            This lightweight online tool is responsive, easy to use, and optimized for both desktop
+                            and mobile devices using modern Bootstrap 5 components.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container text-center">
+
+            <div class="mb-3">
+                <a href="#" class="text-decoration-none text-secondary mx-2">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+
+                <a href="#" class="text-decoration-none text-secondary mx-2">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" class="text-decoration-none text-secondary mx-2">
+                    <i class="fa-brands fa-x-twitter"></i>
+                </a>
+
+                <a href="#" class="text-decoration-none text-secondary mx-2">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
+
+            <p class="mb-0 text-secondary small">
+                © 2026 MIME Type Checker. All rights reserved.
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- MIME CHECKER SCRIPT -->
+    <script>
+        const mimeTypes = {
+            "jpg": "image/jpeg",
+            "jpeg": "image/jpeg",
+            "png": "image/png",
+            "gif": "image/gif",
+            "webp": "image/webp",
+            "svg": "image/svg+xml",
+            "pdf": "application/pdf",
+            "json": "application/json",
+            "txt": "text/plain",
+            "html": "text/html",
+            "css": "text/css",
+            "js": "application/javascript",
+            "xml": "application/xml",
+            "zip": "application/zip",
+            "mp3": "audio/mpeg",
+            "mp4": "video/mp4",
+            "wav": "audio/wav",
+            "csv": "text/csv",
+            "doc": "application/msword",
+            "docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "xls": "application/vnd.ms-excel",
+            "xlsx": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        };
+
+        const checkBtn = document.getElementById("checkBtn");
+        const extensionInput = document.getElementById("extensionInput");
+        const resultBox = document.getElementById("resultBox");
+        const errorBox = document.getElementById("errorBox");
+
+        const extensionResult = document.getElementById("extensionResult");
+        const mimeResult = document.getElementById("mimeResult");
+
+        function checkMimeType() {
+            const ext = extensionInput.value.trim().toLowerCase().replace(".", "");
+
+            resultBox.classList.add("d-none");
+            errorBox.classList.add("d-none");
+
+            if (!ext) {
+                errorBox.classList.remove("d-none");
+                return;
+            }
+
+            if (mimeTypes[ext]) {
+                extensionResult.textContent = "." + ext;
+                mimeResult.textContent = mimeTypes[ext];
+
+                resultBox.classList.remove("d-none");
+            } else {
+                errorBox.classList.remove("d-none");
+            }
+        }
+
+        checkBtn.addEventListener("click", checkMimeType);
+
+        extensionInput.addEventListener("keypress", function(e) {
+            if (e.key === "Enter") {
+                checkMimeType();
+            }
+        });
+    </script>
+
+</body>
+</html>

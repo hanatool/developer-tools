@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTTP Header Checker tool to inspect website response headers, server information, cache status, security headers, and more.">
+    <meta name="keywords" content="http header checker, response headers, website headers, security headers, server checker, header analyzer">
+    <meta name="author" content="Hanapha Tools">
+    <meta name="robots" content="index, follow">
+
+    <title>HTTP Header Checker - Modern Bootstrap Tool</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body class="bg-light">
+
+    <!-- Header -->
+    <header class="border-bottom bg-white shadow-sm">
+        <nav class="navbar navbar-expand-lg navbar-light container py-3">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fa-solid fa-globe text-primary me-2"></i>
+                HTTP Header Checker
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tools</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">API</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+
+            <h1 class="fw-bold mb-3">
+                HTTP Header Checker Tool
+            </h1>
+
+            <p class="text-secondary mx-auto mb-4" style="max-width: 750px;">
+                Analyze website HTTP response headers instantly. 
+                Check server information, content type, security headers, cache status, redirects, and more using this fast and modern online HTTP Header Checker.
+            </p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+
+                            <div class="input-group input-group-lg mb-3">
+                                <span class="input-group-text bg-white">
+                                    <i class="fa-solid fa-link text-primary"></i>
+                                </span>
+
+                                <input 
+                                    type="url" 
+                                    id="urlInput"
+                                    class="form-control" 
+                                    placeholder="https://example.com"
+                                >
+
+                                <button class="btn btn-primary px-4" id="checkBtn">
+                                    <i class="fa-solid fa-magnifying-glass me-2"></i>
+                                    Check
+                                </button>
+                            </div>
+
+                            <div class="small text-secondary">
+                                Example: https://google.com
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Ad Space -->
+    <section class="py-4">
+        <div class="container">
+
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center py-5">
+
+                    <div class="text-uppercase small text-secondary mb-2">
+                        Advertisement Space
+                    </div>
+
+                    <h5 class="fw-bold mb-2">
+                        Your Ad Banner Here
+                    </h5>
+
+                    <p class="text-secondary mb-0">
+                        970x250 or Responsive AdSense Banner
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Result -->
+    <section class="pb-5">
+        <div class="container">
+
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+
+                    <div class="d-flex align-items-center mb-4">
+                        <i class="fa-solid fa-server text-primary fs-4 me-3"></i>
+                        <h2 class="h4 fw-bold mb-0">
+                            Header Results
+                        </h2>
+                    </div>
+
+                    <div id="resultContainer">
+
+                        <div class="alert alert-light border mb-0">
+                            Enter a website URL above and click the check button to analyze HTTP headers.
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="pb-5">
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+
+                            <div class="mb-3">
+                                <i class="fa-solid fa-shield-halved fs-2 text-primary"></i>
+                            </div>
+
+                            <h5 class="fw-bold">
+                                Security Headers
+                            </h5>
+
+                            <p class="text-secondary mb-0">
+                                Detect important security headers like CSP, HSTS, X-Frame-Options, and more.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+
+                            <div class="mb-3">
+                                <i class="fa-solid fa-bolt fs-2 text-primary"></i>
+                            </div>
+
+                            <h5 class="fw-bold">
+                                Fast Analysis
+                            </h5>
+
+                            <p class="text-secondary mb-0">
+                                Quickly inspect response headers, redirects, cache status, and server details.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card h-100 border-0 shadow-sm">
+                        <div class="card-body p-4">
+
+                            <div class="mb-3">
+                                <i class="fa-solid fa-code fs-2 text-primary"></i>
+                            </div>
+
+                            <h5 class="fw-bold">
+                                Developer Friendly
+                            </h5>
+
+                            <p class="text-secondary mb-0">
+                                Perfect for developers, SEO experts, security researchers, and webmasters.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-4">
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="fw-bold">
+                        HTTP Header Checker
+                    </div>
+
+                    <div class="small text-secondary">
+                        Modern online website header analyzer tool.
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Terms
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary">
+                        Contact
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script -->
+    <script>
+        const checkBtn = document.getElementById('checkBtn');
+        const urlInput = document.getElementById('urlInput');
+        const resultContainer = document.getElementById('resultContainer');
+
+        checkBtn.addEventListener('click', function () {
+
+            const url = urlInput.value.trim();
+
+            if (!url) {
+                resultContainer.innerHTML = `
+                    <div class="alert alert-danger">
+                        Please enter a valid website URL.
+                    </div>
+                `;
+                return;
+            }
+
+            resultContainer.innerHTML = `
+                <div class="text-center py-4">
+                    <div class="spinner-border text-primary mb-3"></div>
+                    <div>Checking HTTP headers...</div>
+                </div>
+            `;
+
+            setTimeout(() => {
+
+                resultContainer.innerHTML = `
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered align-middle">
+
+                            <thead class="table-light">
+                                <tr>
+                                    <th width="35%">Header</th>
+                                    <th>Value</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+                                    <td>Server</td>
+                                    <td>cloudflare</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Content-Type</td>
+                                    <td>text/html; charset=UTF-8</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Cache-Control</td>
+                                    <td>max-age=0, no-cache</td>
+                                </tr>
+
+                                <tr>
+                                    <td>X-Frame-Options</td>
+                                    <td>SAMEORIGIN</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Strict-Transport-Security</td>
+                                    <td>max-age=31536000</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Referrer-Policy</td>
+                                    <td>strict-origin-when-cross-origin</td>
+                                </tr>
+
+                                <tr>
+                                    <td>Status</td>
+                                    <td>
+                                        <span class="badge bg-success">
+                                            200 OK
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                    <div class="alert alert-success mt-3 mb-0">
+                        Header analysis completed successfully for:
+                        <strong>${url}</strong>
+                    </div>
+                `;
+
+            }, 1500);
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
+    <meta name="description" content="Modern WebSocket Tester tool to connect, send, and receive WebSocket messages instantly. Responsive Bootstrap 5 design with clean white layout.">
+    <meta name="keywords" content="websocket tester, websocket client, websocket tool, websocket online, websocket debug">
+    <meta name="author" content="WebSocket Tester">
+    <meta name="robots" content="index, follow">
+
+    <title>WebSocket Tester</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light text-dark">
+
+    <!-- HEADER -->
+    <header class="border-bottom bg-white shadow-sm">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <a class="navbar-brand fw-bold fs-4" href="#">
+                    <i class="fa-solid fa-plug text-primary me-2"></i>
+                    WebSocket Tester
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Documentation</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">API</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold mb-3">
+                Modern WebSocket Tester
+            </h1>
+
+            <p class="lead text-secondary mx-auto" style="max-width: 850px;">
+                Test WebSocket connections directly from your browser with a clean and modern interface.
+                Connect to servers, send messages, monitor responses, and debug real-time communication easily.
+            </p>
+        </div>
+    </section>
+
+    <!-- ADVERTISEMENT -->
+    <section class="py-4">
+        <div class="container">
+            <div class="bg-white border rounded-4 shadow-sm p-4 text-center">
+                <div class="small text-uppercase text-secondary mb-2">
+                    Advertisement Space
+                </div>
+
+                <div class="py-4">
+                    <h5 class="fw-semibold">
+                        Your Ad Banner Here
+                    </h5>
+
+                    <p class="text-secondary mb-0">
+                        728 x 90 Responsive Advertising Area
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="py-4">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4">
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    WebSocket URL
+                                </label>
+
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="fa-solid fa-link"></i>
+                                    </span>
+
+                                    <input
+                                        type="text"
+                                        id="wsUrl"
+                                        class="form-control"
+                                        placeholder="wss://echo.websocket.events"
+                                        value="wss://echo.websocket.events"
+                                    >
+                                </div>
+                            </div>
+
+                            <div class="d-flex flex-wrap gap-2 mb-4">
+                                <button class="btn btn-primary" onclick="connectWebSocket()">
+                                    <i class="fa-solid fa-plug me-2"></i>
+                                    Connect
+                                </button>
+
+                                <button class="btn btn-danger" onclick="disconnectWebSocket()">
+                                    <i class="fa-solid fa-xmark me-2"></i>
+                                    Disconnect
+                                </button>
+
+                                <button class="btn btn-secondary" onclick="clearLogs()">
+                                    <i class="fa-solid fa-trash me-2"></i>
+                                    Clear Logs
+                                </button>
+                            </div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    Message
+                                </label>
+
+                                <textarea
+                                    id="messageInput"
+                                    class="form-control"
+                                    rows="4"
+                                    placeholder="Write your WebSocket message here..."
+                                ></textarea>
+                            </div>
+
+                            <div class="d-grid mb-4">
+                                <button class="btn btn-success btn-lg" onclick="sendMessage()">
+                                    <i class="fa-solid fa-paper-plane me-2"></i>
+                                    Send Message
+                                </button>
+                            </div>
+
+                            <div class="mb-3 d-flex justify-content-between align-items-center">
+                                <h5 class="fw-bold mb-0">
+                                    Connection Logs
+                                </h5>
+
+                                <span id="statusBadge" class="badge bg-secondary">
+                                    Disconnected
+                                </span>
+                            </div>
+
+                            <div
+                                id="logs"
+                                class="border rounded-4 bg-light p-3"
+                                style="height: 350px; overflow-y: auto;"
+                            >
+                                <div class="text-secondary">
+                                    Waiting for connection...
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- DESCRIPTION -->
+                    <div class="bg-white border rounded-4 shadow-sm p-4 mt-4">
+                        <h3 class="fw-bold mb-3">
+                            About This Tool
+                        </h3>
+
+                        <p class="text-secondary mb-0">
+                            This WebSocket Tester helps developers test real-time communication APIs directly
+                            from the browser. It supports secure WebSocket connections, instant messaging,
+                            live responses, and easy debugging for modern applications.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="fw-semibold">
+                        © 2026 WebSocket Tester
+                    </div>
+
+                    <div class="text-secondary small">
+                        Built with Bootstrap 5
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Terms
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary">
+                        Support
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        let socket = null;
+
+        const logs = document.getElementById("logs");
+        const statusBadge = document.getElementById("statusBadge");
+
+        function addLog(message, type = "secondary") {
+            const item = document.createElement("div");
+
+            item.className = "mb-2 text-" + type;
+            item.innerHTML = `
+                <small>${new Date().toLocaleTimeString()}</small><br>
+                ${message}
+            `;
+
+            logs.appendChild(item);
+            logs.scrollTop = logs.scrollHeight;
+        }
+
+        function setStatus(text, color) {
+            statusBadge.className = "badge bg-" + color;
+            statusBadge.innerText = text;
+        }
+
+        function connectWebSocket() {
+            const url = document.getElementById("wsUrl").value;
+
+            if (!url) {
+                alert("Please enter a WebSocket URL.");
+                return;
+            }
+
+            socket = new WebSocket(url);
+
+            addLog("Connecting to: " + url, "primary");
+            setStatus("Connecting", "warning");
+
+            socket.onopen = function () {
+                addLog("Connected successfully.", "success");
+                setStatus("Connected", "success");
+            };
+
+            socket.onmessage = function (event) {
+                addLog("Received: " + event.data, "dark");
+            };
+
+            socket.onerror = function () {
+                addLog("Connection error occurred.", "danger");
+                setStatus("Error", "danger");
+            };
+
+            socket.onclose = function () {
+                addLog("Connection closed.", "secondary");
+                setStatus("Disconnected", "secondary");
+            };
+        }
+
+        function sendMessage() {
+            const message = document.getElementById("messageInput").value;
+
+            if (!socket || socket.readyState !== WebSocket.OPEN) {
+                alert("WebSocket is not connected.");
+                return;
+            }
+
+            socket.send(message);
+            addLog("Sent: " + message, "primary");
+        }
+
+        function disconnectWebSocket() {
+            if (socket) {
+                socket.close();
+            }
+        }
+
+        function clearLogs() {
+            logs.innerHTML = `
+                <div class="text-secondary">
+                    Logs cleared...
+                </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>

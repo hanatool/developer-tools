@@ -1,134 +1,249 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Modern Markdown Editor with live preview and responsive design." />
-    <meta name="keywords" content="Markdown Editor, Bootstrap Editor, Live Preview, HTML Editor" />
-    <meta name="author" content="OpenAI" />
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Modern Markdown Editor built with Bootstrap 5. Create, preview, and manage markdown content easily with a clean responsive interface.">
+    <meta name="keywords" content="markdown editor, bootstrap markdown editor, html markdown preview, online markdown tool">
+    <meta name="author" content="Markdown Editor">
+    <meta name="robots" content="index, follow">
 
-    <title>Markdown Editor</title>
+    <title>Modern Markdown Editor</title>
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <!-- Marked.js -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body class="bg-light text-dark">
+<body class="bg-light">
 
-    <!-- Header -->
-    <header class="border-bottom bg-white shadow-none sticky-top">
-        <div class="container py-3 container">
-            <h1 class="h4 mb-0 fw-bold">
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
                 <i class="fa-solid fa-pen-nib me-2 text-primary"></i>
                 Markdown Editor
-            </h1>
+            </a>
 
-            <button class="btn btn-outline-primary btn-sm">
-                <i class="fa-solid fa-download me-1"></i>
-                Export
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
             </button>
-        </div>
-    </header>
 
-    <!-- Hero -->
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Documentation</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
     <section class="py-5 bg-white border-bottom">
         <div class="container text-center">
-            <h2 class="fw-bold mb-3">Modern Markdown Writing Experience</h2>
-            <p class="text-secondary mx-auto" style="max-width: 700px;">
-                Create, edit, and preview markdown content instantly with a clean and responsive interface built using Bootstrap 5.
+            <h1 class="fw-bold display-5 mb-3">
+                Clean & Modern Markdown Editor
+            </h1>
+
+            <p class="text-secondary mx-auto" style="max-width: 760px;">
+                Write markdown content easily with live preview support, responsive layout,
+                Bootstrap 5 styling, and a minimal modern interface designed for productivity.
             </p>
         </div>
     </section>
 
-    <!-- Advertisement -->
-    <section class="py-4">
-        <div class="container">
-            <div class="bg-white border rounded-4 p-4 text-center shadow-sm">
-                <p class="text-secondary mb-2 fw-semibold">
-                    Advertisement Space
-                </p>
+    <!-- ADS TOP -->
+    <div class="container py-4">
+        <div class="bg-white border rounded-4 p-4 text-center shadow-sm">
+            <small class="text-uppercase text-muted d-block mb-2">
+                Advertisement
+            </small>
 
-                <div class="bg-light border rounded-3 py-5">
-                    <i class="fa-solid fa-bullhorn fa-2x text-secondary mb-3"></i>
-                    <p class="mb-0 text-muted">
-                        Your Ads Banner Here
-                    </p>
-                </div>
+            <div class="py-4">
+                <i class="fa-solid fa-rectangle-ad fa-3x text-secondary mb-3"></i>
+                <p class="mb-0 text-secondary">
+                    Your Ad Banner 970x250
+                </p>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Editor -->
-    <main class="flex-grow-1 py-4">
+    <!-- EDITOR -->
+    <section class="pb-5">
         <div class="container">
+
             <div class="row g-4">
 
-                <!-- Markdown Input -->
+                <!-- INPUT -->
                 <div class="col-lg-6">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
-                        <div class="card-header bg-white border-bottom rounded-top-4">
-                            <h3 class="h6 mb-0 fw-bold">
-                                <i class="fa-solid fa-file-lines me-2 text-primary"></i>
+                        <div class="card-header bg-white border-bottom py-3">
+                            <h5 class="mb-0">
+                                <i class="fa-solid fa-file-pen me-2 text-primary"></i>
                                 Markdown Input
-                            </h3>
+                            </h5>
                         </div>
 
                         <div class="card-body">
-                            <textarea
+                            <textarea 
                                 id="markdownInput"
-                                class="form-control border-0 bg-light"
-                                rows="18"
+                                class="form-control"
+                                rows="22"
                                 placeholder="# Welcome
 
 Write your markdown here...
 
 ## Example
-- Bootstrap 5
-- Live Preview
-- Responsive Layout"
-                            ></textarea>
+- Item One
+- Item Two
+
+**Bold Text**
+*Italic Text*
+`Code`
+"></textarea>
                         </div>
                     </div>
                 </div>
 
-                <!-- Preview -->
+                <!-- PREVIEW -->
                 <div class="col-lg-6">
                     <div class="card border-0 shadow-sm rounded-4 h-100">
-                        <div class="card-header bg-white border-bottom rounded-top-4">
-                            <h3 class="h6 mb-0 fw-bold">
-                                <i class="fa-solid fa-eye me-2 text-primary"></i>
+                        <div class="card-header bg-white border-bottom py-3 d-flex justify-content-between align-items-center">
+                            <h5 class="mb-0">
+                                <i class="fa-solid fa-eye me-2 text-success"></i>
                                 Live Preview
-                            </h3>
+                            </h5>
+
+                            <button class="btn btn-sm btn-primary" id="copyBtn">
+                                <i class="fa-solid fa-copy me-1"></i>
+                                Copy
+                            </button>
                         </div>
 
                         <div class="card-body">
-                            <div id="preview" class="bg-light rounded-3 p-4 min-vh-50">
-                                <h1>Welcome</h1>
-                                <p>Start typing markdown to see the preview.</p>
-                            </div>
+                            <div id="preview" class="overflow-auto"></div>
                         </div>
                     </div>
                 </div>
 
             </div>
+
         </div>
-    </main>
+    </section>
 
-    <!-- Footer -->
-    <footer class="bg-white border-top py-4 mt-auto">
-        <div class="container text-center">
-            <p class="mb-1 fw-semibold">
-                Markdown Editor
-            </p>
+    <!-- FEATURES -->
+    <section class="pb-5">
+        <div class="container">
 
-            <p class="text-secondary small mb-0">
-                Responsive minimalist markdown editor built with Bootstrap 5.
-            </p>
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm rounded-4 text-center h-100">
+                        <div class="card-body p-4">
+                            <i class="fa-solid fa-bolt fa-2x text-primary mb-3"></i>
+                            <h5>Fast Editing</h5>
+                            <p class="text-secondary mb-0">
+                                Real-time markdown rendering with a lightweight and modern interface.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm rounded-4 text-center h-100">
+                        <div class="card-body p-4">
+                            <i class="fa-solid fa-mobile-screen fa-2x text-success mb-3"></i>
+                            <h5>Responsive Design</h5>
+                            <p class="text-secondary mb-0">
+                                Optimized for desktop, tablet, and mobile devices using Bootstrap 5.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card border-0 shadow-sm rounded-4 text-center h-100">
+                        <div class="card-body p-4">
+                            <i class="fa-solid fa-code fa-2x text-danger mb-3"></i>
+                            <h5>Markdown Support</h5>
+                            <p class="text-secondary mb-0">
+                                Supports headings, lists, links, code blocks, tables, and more.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ADS BOTTOM -->
+    <div class="container pb-5">
+        <div class="bg-white border rounded-4 p-4 text-center shadow-sm">
+            <small class="text-uppercase text-muted d-block mb-2">
+                Sponsored Content
+            </small>
+
+            <div class="py-4">
+                <i class="fa-solid fa-image fa-3x text-secondary mb-3"></i>
+                <p class="mb-0 text-secondary">
+                    Responsive Ad Placement Area
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4">
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <h6 class="fw-bold mb-1">
+                        Markdown Editor
+                    </h6>
+
+                    <small class="text-secondary">
+                        Minimal Bootstrap Markdown Editor Interface
+                    </small>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Privacy
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Terms
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary">
+                        Support
+                    </a>
+                </div>
+
+            </div>
+
         </div>
     </footer>
 
@@ -139,13 +254,50 @@ Write your markdown here...
     <script>
         const markdownInput = document.getElementById('markdownInput');
         const preview = document.getElementById('preview');
+        const copyBtn = document.getElementById('copyBtn');
+
+        const defaultMarkdown = `
+# Modern Markdown Editor
+
+Welcome to the live markdown editor.
+
+## Features
+- Live Preview
+- Bootstrap 5
+- Responsive Layout
+- Minimal Design
+
+### Example Code
+\`\`\`javascript
+console.log("Hello Markdown");
+\`\`\`
+
+> Simple, clean, and modern.
+`;
+
+        markdownInput.value = defaultMarkdown;
 
         function updatePreview() {
-            const markdownText = markdownInput.value;
-            preview.innerHTML = marked.parse(markdownText);
+            preview.innerHTML = marked.parse(markdownInput.value);
         }
 
         markdownInput.addEventListener('input', updatePreview);
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(markdownInput.value);
+
+            copyBtn.innerHTML = `
+                <i class="fa-solid fa-check me-1"></i>
+                Copied
+            `;
+
+            setTimeout(() => {
+                copyBtn.innerHTML = `
+                    <i class="fa-solid fa-copy me-1"></i>
+                    Copy
+                `;
+            }, 2000);
+        });
 
         updatePreview();
     </script>

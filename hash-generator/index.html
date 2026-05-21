@@ -1,68 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
     <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Modern Hash Generator Tool with MD5, SHA1, SHA256 and SHA512 support." />
-    <meta name="keywords" content="Hash Generator, MD5, SHA1, SHA256, SHA512, Bootstrap Tool" />
-    <meta name="author" content="Hash Generator" />
-    <meta name="robots" content="index, follow" />
+    <meta name="description" content="Free online Hash Generator tool to generate MD5, SHA1, SHA256, SHA512 hashes instantly with a modern Bootstrap interface.">
+    <meta name="keywords" content="hash generator, md5 generator, sha1 generator, sha256 generator, sha512 generator, online hash tool">
+    <meta name="author" content="Hash Generator Tool">
+    <meta name="robots" content="index, follow">
 
-    <title>Hash Generator</title>
+    <title>Hash Generator - Online MD5 SHA256 Tool</title>
 
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-</head>
-<body class="bg-light text-dark">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <body class="bg-light" style="font-family: Inter, sans-serif;">
 
     <!-- Header -->
-    <header class="border-bottom bg-white shadow-none sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
         <div class="container">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white">
-                <a href="#" class="text-decoration-none text-dark fw-bold fs-4">
-                    <i class="fa-solid fa-shield-halved me-2"></i>
-                    Hash Generator
-                </a>
+            <a class="navbar-brand fw-bold text-dark" href="#">
+                <i class="fa-solid fa-shield-halved me-2 text-primary"></i>
+                Hash Generator
+            </a>
 
-                <nav>
-                    <a href="#" class="text-decoration-none text-secondary me-3">Home</a>
-                    <a href="#" class="text-decoration-none text-secondary me-3">Tools</a>
-                    <a href="#" class="text-decoration-none text-secondary">Contact</a>
-                </nav>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tools</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero -->
     <section class="py-5 bg-white border-bottom">
         <div class="container text-center">
-            <h1 class="fw-bold mb-3">
-                Modern Hash Generator Tool
+            <h1 class="fw-bold display-5 mb-3">
+                Online Hash Generator
             </h1>
 
-            <p class="text-secondary mx-auto" style="max-width: 700px;">
-                Generate secure hashes instantly using MD5, SHA1, SHA256, and SHA512 algorithms.
-                Fast, responsive, modern, and lightweight interface powered by Bootstrap 5.
+            <p class="text-secondary mx-auto" style="max-width: 720px;">
+                Generate secure MD5, SHA1, SHA256, and SHA512 hashes instantly using our free online hash generator tool. Fast, responsive, and easy to use on desktop and mobile devices.
             </p>
         </div>
     </section>
 
-    <!-- Main Content -->
-    <main class="py-5">
+    <!-- Ad Space -->
+    <section class="py-4">
         <div class="container">
+            <div class="bg-white border rounded-4 p-4 text-center">
+                <div class="small text-uppercase text-secondary mb-2">
+                    Advertisement Space
+                </div>
 
+                <div class="py-5">
+                    <i class="fa-solid fa-rectangle-ad fa-3x text-secondary mb-3"></i>
+                    <p class="text-muted mb-0">
+                        728 x 90 Banner Ad Placement
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Tool -->
+    <section class="pb-5">
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
 
-                    <!-- Generator Card -->
-                    <div class="card border-0 shadow-sm rounded-4 mb-4">
-                        <div class="card-body p-4">
+                    <div class="card border-0 shadow-sm rounded-4">
+                        <div class="card-body p-4 p-md-5">
 
                             <div class="mb-4">
                                 <label class="form-label fw-semibold">
@@ -70,142 +102,176 @@
                                 </label>
 
                                 <textarea 
+                                    class="form-control form-control-lg"
                                     id="inputText"
-                                    class="form-control rounded-3"
-                                    rows="5"
-                                    placeholder="Type something here..."
+                                    rows="6"
+                                    placeholder="Type or paste your text here..."
                                 ></textarea>
                             </div>
 
                             <div class="row g-3 mb-4">
-                                <div class="col-md-3">
-                                    <button class="btn btn-dark w-100 rounded-3" onclick="generateHash('MD5')">
-                                        MD5
+                                <div class="col-md-6">
+                                    <button class="btn btn-primary w-100 py-3" onclick="generateHashes()">
+                                        <i class="fa-solid fa-bolt me-2"></i>
+                                        Generate Hash
                                     </button>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <button class="btn btn-dark w-100 rounded-3" onclick="generateHash('SHA-1')">
-                                        SHA1
-                                    </button>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <button class="btn btn-dark w-100 rounded-3" onclick="generateHash('SHA-256')">
-                                        SHA256
-                                    </button>
-                                </div>
-
-                                <div class="col-md-3">
-                                    <button class="btn btn-dark w-100 rounded-3" onclick="generateHash('SHA-512')">
-                                        SHA512
+                                <div class="col-md-6">
+                                    <button class="btn btn-outline-secondary w-100 py-3" onclick="clearFields()">
+                                        <i class="fa-solid fa-trash me-2"></i>
+                                        Clear
                                     </button>
                                 </div>
                             </div>
 
-                            <div>
-                                <label class="form-label fw-semibold">
-                                    Generated Hash
-                                </label>
+                            <!-- Results -->
+                            <div class="border rounded-4 p-4 bg-light">
 
-                                <textarea 
-                                    id="outputHash"
-                                    class="form-control rounded-3"
-                                    rows="5"
-                                    readonly
-                                    placeholder="Generated hash will appear here..."
-                                ></textarea>
+                                <div class="mb-4">
+                                    <label class="form-label fw-semibold">
+                                        MD5
+                                    </label>
+
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="md5Result" readonly>
+                                        <button class="btn btn-outline-primary" onclick="copyText('md5Result')">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-semibold">
+                                        SHA1
+                                    </label>
+
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="sha1Result" readonly>
+                                        <button class="btn btn-outline-primary" onclick="copyText('sha1Result')">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="mb-4">
+                                    <label class="form-label fw-semibold">
+                                        SHA256
+                                    </label>
+
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="sha256Result" readonly>
+                                        <button class="btn btn-outline-primary" onclick="copyText('sha256Result')">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="form-label fw-semibold">
+                                        SHA512
+                                    </label>
+
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="sha512Result" readonly>
+                                        <button class="btn btn-outline-primary" onclick="copyText('sha512Result')">
+                                            <i class="fa-regular fa-copy"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
                             </div>
 
                         </div>
                     </div>
 
                     <!-- Description -->
-                    <div class="card border-0 shadow-sm rounded-4 mb-4">
-                        <div class="card-body p-4">
-                            <h3 class="fw-bold mb-3">
-                                About This Tool
-                            </h3>
+                    <div class="bg-white rounded-4 border p-4 mt-4">
+                        <h2 class="h4 fw-bold mb-3">
+                            About This Tool
+                        </h2>
 
-                            <p class="text-secondary mb-0">
-                                This online hash generator helps developers, students, and cybersecurity enthusiasts
-                                create secure encrypted hash outputs using common hashing algorithms.
-                                The interface is fully responsive, clean, minimal, and optimized for all devices.
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Advertisement Area -->
-                    <div class="card border-0 shadow-sm rounded-4">
-                        <div class="card-body text-center p-5">
-                            <div class="mb-3">
-                                <i class="fa-solid fa-rectangle-ad fa-3x text-secondary"></i>
-                            </div>
-
-                            <h5 class="fw-bold">
-                                Advertisement Space
-                            </h5>
-
-                            <p class="text-secondary mb-0">
-                                Your responsive ad banner can be placed here.
-                            </p>
-                        </div>
+                        <p class="text-secondary mb-0">
+                            This online hash generator helps developers, cybersecurity professionals, and everyday users create secure hashes instantly. You can generate MD5, SHA1, SHA256, and SHA512 encrypted outputs for passwords, verification, and data integrity purposes directly in your browser.
+                        </p>
                     </div>
 
                 </div>
             </div>
-
         </div>
-    </main>
+    </section>
 
     <!-- Footer -->
-    <footer class="bg-white border-top py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-1 fw-semibold">
-                Hash Generator Tool
-            </p>
+    <footer class="bg-white border-top py-4">
+        <div class="container">
+            <div class="row align-items-center">
 
-            <p class="text-secondary small mb-0">
-                © 2026 All Rights Reserved.
-            </p>
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="fw-semibold">
+                        © 2026 Hash Generator Tool
+                    </div>
+
+                    <div class="small text-secondary">
+                        Secure online utilities for everyone.
+                    </div>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Privacy
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Terms
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary">
+                        Contact
+                    </a>
+                </div>
+
+            </div>
         </div>
     </footer>
 
+    <!-- CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
+
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Hash Script -->
+    <!-- Script -->
     <script>
-        async function generateHash(type) {
-            const input = document.getElementById('inputText').value;
-            const output = document.getElementById('outputHash');
+        function generateHashes() {
+            const text = document.getElementById("inputText").value;
 
-            if (!input.trim()) {
-                output.value = 'Please enter text first.';
-                return;
-            }
+            document.getElementById("md5Result").value =
+                CryptoJS.MD5(text).toString();
 
-            try {
-                const encoder = new TextEncoder();
-                const data = encoder.encode(input);
+            document.getElementById("sha1Result").value =
+                CryptoJS.SHA1(text).toString();
 
-                if (type === 'MD5') {
-                    output.value = 'MD5 is not supported in Web Crypto API.';
-                    return;
-                }
+            document.getElementById("sha256Result").value =
+                CryptoJS.SHA256(text).toString();
 
-                const hashBuffer = await crypto.subtle.digest(type, data);
-                const hashArray = Array.from(new Uint8Array(hashBuffer));
+            document.getElementById("sha512Result").value =
+                CryptoJS.SHA512(text).toString();
+        }
 
-                const hashHex = hashArray
-                    .map(byte => byte.toString(16).padStart(2, '0'))
-                    .join('');
+        function clearFields() {
+            document.getElementById("inputText").value = "";
+            document.getElementById("md5Result").value = "";
+            document.getElementById("sha1Result").value = "";
+            document.getElementById("sha256Result").value = "";
+            document.getElementById("sha512Result").value = "";
+        }
 
-                output.value = hashHex;
+        function copyText(id) {
+            const input = document.getElementById(id);
 
-            } catch (error) {
-                output.value = 'Error generating hash.';
-            }
+            navigator.clipboard.writeText(input.value);
+
+            alert("Copied to clipboard!");
         }
     </script>
 

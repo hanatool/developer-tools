@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
+    <meta name="description" content="Free online JSON Validator tool to validate, format, and beautify JSON instantly with a modern Bootstrap interface.">
+    <meta name="keywords" content="JSON Validator, JSON Formatter, JSON Beautifier, Online JSON Tool, Bootstrap JSON Validator">
+    <meta name="author" content="JSON Validator Tool">
+    <meta name="robots" content="index, follow">
+
+    <title>JSON Validator - Modern Online Tool</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="bg-light">
+
+    <!-- HEADER -->
+    <header class="border-bottom bg-white shadow-sm">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <a class="navbar-brand fw-bold text-primary" href="#">
+                    <i class="fa-solid fa-code"></i> JSON Validator
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="fw-bold mb-3">
+                Free Online JSON Validator
+            </h1>
+
+            <p class="text-secondary mx-auto" style="max-width: 800px;">
+                Validate, format, and beautify your JSON data instantly using this modern and responsive online JSON validator tool.
+                Detect syntax errors quickly and improve your workflow with a clean Bootstrap interface.
+            </p>
+        </div>
+    </section>
+
+    <!-- MAIN TOOL -->
+    <main class="py-5">
+        <div class="container">
+
+            <!-- ADVERTISEMENT -->
+            <div class="card border-0 shadow-sm mb-4">
+                <div class="card-body text-center py-4">
+                    <span class="badge bg-warning text-dark mb-2">
+                        Advertisement
+                    </span>
+
+                    <h5 class="mb-2">
+                        Your Ad Banner Here
+                    </h5>
+
+                    <p class="text-secondary mb-0">
+                        Responsive advertisement area for banners, affiliate links, or promotions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- VALIDATOR -->
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+
+                    <div class="row g-4">
+
+                        <!-- INPUT -->
+                        <div class="col-lg-6">
+                            <label class="form-label fw-semibold">
+                                JSON Input
+                            </label>
+
+                            <textarea 
+                                id="jsonInput"
+                                class="form-control"
+                                rows="16"
+                                placeholder='{
+  "name": "John",
+  "age": 25,
+  "country": "USA"
+}'></textarea>
+                        </div>
+
+                        <!-- OUTPUT -->
+                        <div class="col-lg-6">
+                            <label class="form-label fw-semibold">
+                                Result
+                            </label>
+
+                            <textarea 
+                                id="jsonOutput"
+                                class="form-control bg-light"
+                                rows="16"
+                                readonly
+                                placeholder="Validation results will appear here..."></textarea>
+                        </div>
+                    </div>
+
+                    <!-- BUTTONS -->
+                    <div class="d-flex flex-wrap gap-2 mt-4">
+
+                        <button class="btn btn-primary" onclick="validateJSON()">
+                            <i class="fa-solid fa-check"></i>
+                            Validate JSON
+                        </button>
+
+                        <button class="btn btn-success" onclick="formatJSON()">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            Format JSON
+                        </button>
+
+                        <button class="btn btn-secondary" onclick="clearFields()">
+                            <i class="fa-solid fa-trash"></i>
+                            Clear
+                        </button>
+
+                        <button class="btn btn-dark" onclick="copyResult()">
+                            <i class="fa-solid fa-copy"></i>
+                            Copy Result
+                        </button>
+                    </div>
+
+                    <!-- STATUS -->
+                    <div id="statusMessage" class="mt-4"></div>
+
+                </div>
+            </div>
+
+            <!-- DESCRIPTION -->
+            <div class="card border-0 shadow-sm mt-4">
+                <div class="card-body p-4">
+
+                    <h3 class="fw-bold mb-3">
+                        About This Tool
+                    </h3>
+
+                    <p class="text-secondary mb-3">
+                        This JSON Validator helps developers, students, and programmers validate JSON syntax online quickly and efficiently.
+                        It automatically checks for formatting issues, missing brackets, commas, or invalid structures.
+                    </p>
+
+                    <p class="text-secondary mb-0">
+                        Built with Bootstrap 5 and Font Awesome, this lightweight and responsive tool works smoothly on desktop,
+                        tablet, and mobile devices.
+                    </p>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container text-center">
+
+            <p class="mb-2 fw-semibold">
+                JSON Validator Tool
+            </p>
+
+            <p class="text-secondary small mb-0">
+                © 2026 All Rights Reserved. Built with Bootstrap 5.
+            </p>
+
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function validateJSON() {
+            const input = document.getElementById('jsonInput').value;
+            const output = document.getElementById('jsonOutput');
+            const status = document.getElementById('statusMessage');
+
+            try {
+                JSON.parse(input);
+
+                output.value = "JSON is valid.";
+                status.innerHTML = `
+                    <div class="alert alert-success mb-0">
+                        <i class="fa-solid fa-circle-check"></i>
+                        JSON validation successful.
+                    </div>
+                `;
+            } catch (error) {
+                output.value = error.message;
+
+                status.innerHTML = `
+                    <div class="alert alert-danger mb-0">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        Invalid JSON detected.
+                    </div>
+                `;
+            }
+        }
+
+        function formatJSON() {
+            const input = document.getElementById('jsonInput').value;
+            const output = document.getElementById('jsonOutput');
+            const status = document.getElementById('statusMessage');
+
+            try {
+                const parsed = JSON.parse(input);
+                const formatted = JSON.stringify(parsed, null, 4);
+
+                output.value = formatted;
+
+                status.innerHTML = `
+                    <div class="alert alert-success mb-0">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        JSON formatted successfully.
+                    </div>
+                `;
+            } catch (error) {
+                output.value = error.message;
+
+                status.innerHTML = `
+                    <div class="alert alert-danger mb-0">
+                        <i class="fa-solid fa-circle-xmark"></i>
+                        Unable to format invalid JSON.
+                    </div>
+                `;
+            }
+        }
+
+        function clearFields() {
+            document.getElementById('jsonInput').value = '';
+            document.getElementById('jsonOutput').value = '';
+            document.getElementById('statusMessage').innerHTML = '';
+        }
+
+        function copyResult() {
+            const output = document.getElementById('jsonOutput');
+
+            output.select();
+            output.setSelectionRange(0, 99999);
+
+            navigator.clipboard.writeText(output.value);
+
+            document.getElementById('statusMessage').innerHTML = `
+                <div class="alert alert-info mb-0">
+                    <i class="fa-solid fa-copy"></i>
+                    Result copied to clipboard.
+                </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>

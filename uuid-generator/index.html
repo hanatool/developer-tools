@@ -2,161 +2,324 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Modern UUID Generator tool to create secure random UUIDs instantly. Responsive Bootstrap design with minimal and clean interface.">
-    <meta name="keywords" content="UUID Generator, UUID, GUID, Random ID Generator, Bootstrap Tool">
-    <meta name="author" content="UUID Generator">
-    <meta name="robots" content="index, follow">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
+    
+    <title>UUID Generator - Free Online UUID Creator Tool</title>
 
-    <title>UUID Generator</title>
+    <meta name="description" content="Generate secure UUIDs instantly with this free online UUID Generator tool. Create UUID v4 identifiers quickly and easily using a modern Bootstrap interface.">
+    <meta name="keywords" content="UUID Generator, UUID v4, GUID Generator, Online UUID Tool, Random UUID">
+    <meta name="author" content="UUID Generator Tool">
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Canonical -->
+    <link rel="canonical" href="https://example.com/uuid-generator">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="UUID Generator - Free Online UUID Creator">
+    <meta property="og:description" content="Generate secure UUID v4 identifiers instantly with a clean and modern online tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/uuid-generator">
+
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#ffffff">
 </head>
+
 <body class="bg-light text-dark">
 
-    <!-- Header -->
-    <header class="border-bottom bg-white shadow-none sticky-top">
+    <!-- HEADER -->
+    <header class="border-bottom bg-white sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
-                <h1 class="h4 mb-0 fw-bold text-dark">
+                <a class="navbar-brand fw-bold" href="#">
                     <i class="fa-solid fa-fingerprint me-2 text-primary"></i>
                     UUID Generator
-                </h1>
+                </a>
 
-                <button class="btn btn-primary btn-sm" onclick="generateUUID()">
-                    <i class="fa-solid fa-rotate me-1"></i>
-                    Generate
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
+
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <!-- Main -->
-    <main class="flex-grow-1">
-        <div class="container py-5">
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold mb-3">
+                Free UUID Generator
+            </h1>
 
-            <!-- Description -->
-            <div class="row justify-content-center mb-4">
-                <div class="col-lg-8 text-center">
-                    <h2 class="fw-bold text-dark mb-3">
-                        Generate Random UUID Instantly
-                    </h2>
+            <p class="lead text-secondary mx-auto" style="max-width: 760px;">
+                Generate secure and random UUID v4 identifiers instantly. 
+                This modern online UUID Generator helps developers create unique IDs for applications, databases, APIs, and more.
+            </p>
+        </div>
+    </section>
 
-                    <p class="text-secondary mb-0">
-                        Create secure and unique UUIDs quickly using this modern online UUID generator tool.
-                        Fast, responsive, minimal, and easy to use.
-                    </p>
+    <!-- MAIN CONTENT -->
+    <main class="py-5">
+        <div class="container">
+
+            <!-- ADS TOP -->
+            <div class="bg-white border rounded-4 p-4 text-center mb-4 shadow-sm">
+                <span class="badge bg-light text-dark border mb-2">
+                    Advertisement
+                </span>
+
+                <div class="py-4 text-secondary">
+                    728 x 90 Ad Space
                 </div>
             </div>
 
-            <!-- UUID Box -->
-            <div class="row justify-content-center mb-4">
+            <!-- GENERATOR CARD -->
+            <div class="row justify-content-center">
                 <div class="col-lg-8">
+
                     <div class="card border-0 shadow-sm rounded-4">
-                        <div class="card-body p-4">
+                        <div class="card-body p-4 p-lg-5">
 
-                            <label class="form-label fw-semibold text-dark">
-                                Generated UUID
-                            </label>
+                            <div class="text-center mb-4">
+                                <div class="mb-3">
+                                    <i class="fa-solid fa-shield-halved fa-3x text-primary"></i>
+                                </div>
 
-                            <div class="input-group input-group-lg mb-3">
-                                <input 
-                                    type="text" 
-                                    id="uuidOutput" 
-                                    class="form-control" 
-                                    readonly
-                                    placeholder="Click generate button..."
-                                >
+                                <h2 class="fw-bold">
+                                    UUID v4 Generator
+                                </h2>
 
-                                <button class="btn btn-outline-primary" onclick="copyUUID()">
-                                    <i class="fa-regular fa-copy"></i>
-                                </button>
+                                <p class="text-secondary">
+                                    Click the button below to generate a new random UUID.
+                                </p>
                             </div>
 
-                            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                                <button class="btn btn-primary px-4" onclick="generateUUID()">
+                            <!-- RESULT -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    Generated UUID
+                                </label>
+
+                                <div class="input-group input-group-lg">
+                                    <input 
+                                        type="text" 
+                                        class="form-control" 
+                                        id="uuidOutput" 
+                                        readonly
+                                        placeholder="Your UUID will appear here"
+                                    >
+
+                                    <button 
+                                        class="btn btn-primary"
+                                        type="button"
+                                        id="copyBtn"
+                                    >
+                                        <i class="fa-regular fa-copy"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- OPTIONS -->
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">
+                                        Number of UUIDs
+                                    </label>
+
+                                    <select class="form-select" id="uuidCount">
+                                        <option value="1">1 UUID</option>
+                                        <option value="5">5 UUIDs</option>
+                                        <option value="10">10 UUIDs</option>
+                                        <option value="20">20 UUIDs</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <label class="form-label fw-semibold">
+                                        Output Format
+                                    </label>
+
+                                    <select class="form-select" id="uuidFormat">
+                                        <option value="lowercase">Lowercase</option>
+                                        <option value="uppercase">Uppercase</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- BUTTONS -->
+                            <div class="d-grid gap-3 d-md-flex justify-content-md-center">
+                                <button 
+                                    class="btn btn-primary btn-lg px-4"
+                                    id="generateBtn"
+                                >
                                     <i class="fa-solid fa-bolt me-2"></i>
                                     Generate UUID
                                 </button>
 
-                                <button class="btn btn-outline-secondary px-4" onclick="copyUUID()">
-                                    <i class="fa-solid fa-copy me-2"></i>
-                                    Copy
+                                <button 
+                                    class="btn btn-outline-secondary btn-lg px-4"
+                                    id="clearBtn"
+                                >
+                                    <i class="fa-solid fa-trash me-2"></i>
+                                    Clear
                                 </button>
                             </div>
 
                         </div>
                     </div>
-                </div>
-            </div>
 
-            <!-- Ads Area -->
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-sm rounded-4">
-                        <div class="card-body text-center py-5">
+                    <!-- DESCRIPTION -->
+                    <div class="card border-0 shadow-sm rounded-4 mt-4">
+                        <div class="card-body p-4">
 
-                            <div class="mb-3">
-                                <i class="fa-solid fa-rectangle-ad fa-2x text-secondary"></i>
-                            </div>
-
-                            <h3 class="h6 fw-bold text-dark">
-                                Advertisement Space
+                            <h3 class="fw-bold mb-3">
+                                About UUID Generator
                             </h3>
 
+                            <p class="text-secondary">
+                                UUID (Universally Unique Identifier) is a standardized format used to generate unique values across systems and applications. UUIDs are commonly used in databases, APIs, authentication systems, distributed applications, and software development projects.
+                            </p>
+
                             <p class="text-secondary mb-0">
-                                Your advertisement banner can be placed here.
+                                This free UUID Generator tool uses modern browser cryptography to create secure random UUID v4 strings instantly. The tool is responsive, lightweight, and works on desktop, tablet, and mobile devices.
                             </p>
 
                         </div>
                     </div>
+
+                    <!-- ADS BOTTOM -->
+                    <div class="bg-white border rounded-4 p-4 text-center mt-4 shadow-sm">
+                        <span class="badge bg-light text-dark border mb-2">
+                            Sponsored Content
+                        </span>
+
+                        <div class="py-5 text-secondary">
+                            Responsive Ad Space
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-top mt-auto">
-        <nav class="navbar navbar-expand-lg navbar-light bg-white">
-            <div class="text-center text-secondary small">
-                © 2026 UUID Generator. All rights reserved.
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container">
+
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <div class="fw-bold">
+                        UUID Generator Tool
+                    </div>
+
+                    <small class="text-secondary">
+                        Free online tools for developers and creators.
+                    </small>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Terms
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary">
+                        Contact
+                    </a>
+                </div>
             </div>
+
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
+    <!-- TOAST -->
+    <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+        <div id="copyToast" class="toast align-items-center text-bg-dark border-0" role="alert">
+            <div class="d-flex">
+                <div class="toast-body">
+                    UUID copied to clipboard!
+                </div>
+
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Script -->
+    <!-- SCRIPT -->
     <script>
+        const output = document.getElementById('uuidOutput');
+        const generateBtn = document.getElementById('generateBtn');
+        const clearBtn = document.getElementById('clearBtn');
+        const copyBtn = document.getElementById('copyBtn');
+        const uuidCount = document.getElementById('uuidCount');
+        const uuidFormat = document.getElementById('uuidFormat');
+
         function generateUUID() {
-            const uuid = crypto.randomUUID();
-            document.getElementById('uuidOutput').value = uuid;
-        }
+            const count = parseInt(uuidCount.value);
+            const format = uuidFormat.value;
 
-        function copyUUID() {
-            const input = document.getElementById('uuidOutput');
+            let uuids = [];
 
-            if (!input.value) {
-                alert('Please generate a UUID first.');
-                return;
+            for (let i = 0; i < count; i++) {
+                let uuid = crypto.randomUUID();
+
+                if (format === 'uppercase') {
+                    uuid = uuid.toUpperCase();
+                }
+
+                uuids.push(uuid);
             }
 
-            navigator.clipboard.writeText(input.value);
-
-            alert('UUID copied to clipboard.');
+            output.value = uuids.join('\n');
         }
 
-        // Auto generate on load
-        window.onload = generateUUID;
+        generateBtn.addEventListener('click', generateUUID);
+
+        clearBtn.addEventListener('click', () => {
+            output.value = '';
+        });
+
+        copyBtn.addEventListener('click', async () => {
+            if (!output.value) return;
+
+            await navigator.clipboard.writeText(output.value);
+
+            const toastElement = document.getElementById('copyToast');
+            const toast = new bootstrap.Toast(toastElement);
+
+            toast.show();
+        });
+
+        // Auto generate on page load
+        generateUUID();
     </script>
 
 </body>

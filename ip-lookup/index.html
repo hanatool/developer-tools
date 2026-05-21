@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>IP Lookup Tool - Free IP Address Checker</title>
+
+    <meta name="description" content="Free modern IP Lookup tool to check IP address details including country, city, ISP, timezone, and location information instantly." />
+    <meta name="keywords" content="ip lookup, ip checker, ip address finder, geo ip lookup, ip tracker, ip location" />
+    <meta name="author" content="IP Lookup Tool" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+<body class="bg-light text-dark">
+
+    <!-- HEADER -->
+    <header class="border-bottom bg-white sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#">
+                    <i class="fa-solid fa-location-dot text-primary me-2"></i>
+                    IP Lookup
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">API</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+
+            <h1 class="fw-bold mb-3">
+                Free IP Address Lookup Tool
+            </h1>
+
+            <p class="text-secondary mx-auto mb-4" style="max-width: 700px;">
+                Instantly check detailed information about any IP address including country, region,
+                city, ISP provider, timezone, and geographic location using our fast and modern IP Lookup tool.
+            </p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+
+                            <div class="input-group input-group-lg">
+                                <input
+                                    type="text"
+                                    id="ipInput"
+                                    class="form-control"
+                                    placeholder="Enter IP address (example: 8.8.8.8)"
+                                >
+
+                                <button class="btn btn-primary" id="lookupBtn">
+                                    <i class="fa-solid fa-magnifying-glass me-2"></i>
+                                    Lookup
+                                </button>
+                            </div>
+
+                            <div class="mt-3">
+                                <button class="btn btn-outline-secondary btn-sm" id="myIpBtn">
+                                    <i class="fa-solid fa-network-wired me-1"></i>
+                                    Detect My IP
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ADVERTISEMENT -->
+    <section class="py-4">
+        <div class="container">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body text-center py-5">
+                    <span class="badge bg-warning text-dark mb-3">
+                        Advertisement
+                    </span>
+
+                    <h5 class="fw-bold">
+                        Your Ad Space Here
+                    </h5>
+
+                    <p class="text-secondary mb-0">
+                        Responsive advertisement section for banners, affiliate ads, or sponsored content.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULT -->
+    <section class="pb-5">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white py-3">
+                            <h4 class="mb-0 fw-bold">
+                                <i class="fa-solid fa-circle-info text-primary me-2"></i>
+                                IP Information
+                            </h4>
+                        </div>
+
+                        <div class="card-body">
+
+                            <div id="loadingBox" class="text-center py-5 d-none">
+                                <div class="spinner-border text-primary"></div>
+                                <p class="mt-3 text-secondary">
+                                    Loading IP information...
+                                </p>
+                            </div>
+
+                            <div id="resultBox" class="d-none">
+
+                                <div class="row g-4">
+
+                                    <div class="col-md-6">
+                                        <div class="border rounded p-3 h-100">
+                                            <small class="text-secondary">IP Address</small>
+                                            <h5 id="ip" class="fw-bold mt-2">-</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="border rounded p-3 h-100">
+                                            <small class="text-secondary">Country</small>
+                                            <h5 id="country" class="fw-bold mt-2">-</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="border rounded p-3 h-100">
+                                            <small class="text-secondary">Region</small>
+                                            <h5 id="region" class="fw-bold mt-2">-</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="border rounded p-3 h-100">
+                                            <small class="text-secondary">City</small>
+                                            <h5 id="city" class="fw-bold mt-2">-</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="border rounded p-3 h-100">
+                                            <small class="text-secondary">ISP</small>
+                                            <h5 id="isp" class="fw-bold mt-2">-</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="border rounded p-3 h-100">
+                                            <small class="text-secondary">Timezone</small>
+                                            <h5 id="timezone" class="fw-bold mt-2">-</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div id="errorBox" class="alert alert-danger d-none mt-3">
+                                Failed to fetch IP information.
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DESCRIPTION -->
+    <section class="pb-5">
+        <div class="container">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+
+                    <h3 class="fw-bold mb-3">
+                        About This IP Lookup Tool
+                    </h3>
+
+                    <p class="text-secondary">
+                        This free IP Lookup tool helps users identify detailed information about any public IP address.
+                        You can discover the approximate location, internet provider, timezone, region,
+                        and additional network information quickly and securely.
+                    </p>
+
+                    <p class="text-secondary mb-0">
+                        The tool is fully responsive, lightweight, and optimized for desktop and mobile devices.
+                        Perfect for developers, network administrators, bloggers, and internet users who need fast IP information.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4">
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <h5 class="fw-bold mb-1">
+                        IP Lookup
+                    </h5>
+
+                    <small class="text-secondary">
+                        Fast and modern IP address lookup website.
+                    </small>
+                </div>
+
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Privacy Policy
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Terms
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary">
+                        Contact
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const lookupBtn = document.getElementById('lookupBtn');
+        const myIpBtn = document.getElementById('myIpBtn');
+
+        const loadingBox = document.getElementById('loadingBox');
+        const resultBox = document.getElementById('resultBox');
+        const errorBox = document.getElementById('errorBox');
+
+        async function lookupIP(ip = '') {
+
+            loadingBox.classList.remove('d-none');
+            resultBox.classList.add('d-none');
+            errorBox.classList.add('d-none');
+
+            try {
+
+                let url = ip
+                    ? `https://ipapi.co/${ip}/json/`
+                    : `https://ipapi.co/json/`;
+
+                const response = await fetch(url);
+                const data = await response.json();
+
+                document.getElementById('ip').innerText = data.ip || '-';
+                document.getElementById('country').innerText = data.country_name || '-';
+                document.getElementById('region').innerText = data.region || '-';
+                document.getElementById('city').innerText = data.city || '-';
+                document.getElementById('isp').innerText = data.org || '-';
+                document.getElementById('timezone').innerText = data.timezone || '-';
+
+                resultBox.classList.remove('d-none');
+
+            } catch (error) {
+
+                errorBox.classList.remove('d-none');
+
+            } finally {
+
+                loadingBox.classList.add('d-none');
+
+            }
+        }
+
+        lookupBtn.addEventListener('click', () => {
+
+            const ip = document.getElementById('ipInput').value.trim();
+
+            if(ip === '') {
+                alert('Please enter an IP address');
+                return;
+            }
+
+            lookupIP(ip);
+
+        });
+
+        myIpBtn.addEventListener('click', () => {
+            lookupIP();
+        });
+
+        // Auto Detect User IP On Load
+        lookupIP();
+
+    </script>
+
+</body>
+</html>

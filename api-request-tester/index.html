@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
+
+    <!-- SEO -->
+    <title>API Request Tester - Modern Bootstrap Tool</title>
+    <meta name="description" content="Modern API Request Tester built with Bootstrap 5. Test GET, POST, PUT, PATCH, and DELETE requests easily.">
+    <meta name="keywords" content="API Tester, REST API, Bootstrap API Tool, JSON Tester, API Request Tool">
+    <meta name="author" content="Hanapha">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="API Request Tester">
+    <meta property="og:description" content="Simple and modern API testing tool with Bootstrap 5">
+    <meta property="og:type" content="website">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body class="bg-light" style="font-family: 'Inter', sans-serif;">
+
+    <!-- HEADER -->
+    <header class="border-bottom bg-white sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container">
+
+                <a class="navbar-brand fw-bold" href="#">
+                    <i class="fa-solid fa-code text-primary me-2"></i>
+                    API Request Tester
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Documentation</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Tools</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+
+            <div class="mb-3">
+                <span class="badge bg-primary-subtle text-primary px-3 py-2">
+                    Modern API Utility
+                </span>
+            </div>
+
+            <h1 class="fw-bold mb-3">
+                Test Your API Requests Easily
+            </h1>
+
+            <p class="text-secondary mx-auto" style="max-width: 700px;">
+                A lightweight and modern API Request Tester built with Bootstrap 5.
+                Send GET, POST, PUT, PATCH, and DELETE requests instantly with a clean and responsive interface.
+            </p>
+
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="py-5">
+        <div class="container">
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-10">
+
+                    <!-- ADVERTISEMENT -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body text-center py-5">
+                            <p class="text-uppercase small text-secondary mb-2">
+                                Advertisement Space
+                            </p>
+
+                            <h5 class="fw-semibold">
+                                Your Ad Banner Here
+                            </h5>
+
+                            <p class="text-secondary mb-0">
+                                970x250 Responsive Ad Section
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- API FORM -->
+                    <div class="card border-0 shadow-sm">
+
+                        <div class="card-body p-4 p-lg-5">
+
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="me-3">
+                                    <i class="fa-solid fa-paper-plane fa-2x text-primary"></i>
+                                </div>
+
+                                <div>
+                                    <h3 class="fw-bold mb-1">
+                                        API Request Panel
+                                    </h3>
+
+                                    <p class="text-secondary mb-0">
+                                        Send and inspect API responses instantly.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- URL -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    API Endpoint URL
+                                </label>
+
+                                <input
+                                    type="text"
+                                    class="form-control form-control-lg"
+                                    id="apiUrl"
+                                    placeholder="https://jsonplaceholder.typicode.com/posts/1"
+                                >
+                            </div>
+
+                            <!-- METHOD -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    HTTP Method
+                                </label>
+
+                                <select class="form-select form-select-lg" id="httpMethod">
+                                    <option value="GET">GET</option>
+                                    <option value="POST">POST</option>
+                                    <option value="PUT">PUT</option>
+                                    <option value="PATCH">PATCH</option>
+                                    <option value="DELETE">DELETE</option>
+                                </select>
+                            </div>
+
+                            <!-- BODY -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    JSON Body
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    id="requestBody"
+                                    rows="8"
+                                    placeholder='{
+  "title": "Example",
+  "body": "Hello API",
+  "userId": 1
+}'
+                                ></textarea>
+                            </div>
+
+                            <!-- BUTTON -->
+                            <div class="d-grid mb-4">
+                                <button class="btn btn-primary btn-lg" id="sendRequestBtn">
+                                    <i class="fa-solid fa-play me-2"></i>
+                                    Send Request
+                                </button>
+                            </div>
+
+                            <!-- STATUS -->
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">
+                                    Response Status
+                                </label>
+
+                                <div class="form-control bg-light" id="statusBox">
+                                    Waiting for request...
+                                </div>
+                            </div>
+
+                            <!-- RESPONSE -->
+                            <div>
+                                <label class="form-label fw-semibold">
+                                    API Response
+                                </label>
+
+                                <textarea
+                                    class="form-control"
+                                    id="responseOutput"
+                                    rows="14"
+                                    readonly
+                                    placeholder="Response will appear here..."
+                                ></textarea>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- DESCRIPTION -->
+                    <div class="card border-0 shadow-sm mt-4">
+                        <div class="card-body p-4">
+
+                            <h4 class="fw-bold mb-3">
+                                About This Tool
+                            </h4>
+
+                            <p class="text-secondary mb-0">
+                                This API Request Tester helps developers quickly test API endpoints
+                                without using external software. It supports multiple request methods,
+                                JSON body input, real-time response output, and responsive design
+                                powered by Bootstrap 5.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-white border-top py-4 mt-5">
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <h6 class="fw-bold mb-1">
+                        API Request Tester
+                    </h6>
+
+                    <p class="text-secondary small mb-0">
+                        Modern Bootstrap API testing interface.
+                    </p>
+                </div>
+
+                <div class="col-md-6 text-md-end">
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Privacy
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary me-3">
+                        Terms
+                    </a>
+
+                    <a href="#" class="text-decoration-none text-secondary">
+                        Support
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- BOOTSTRAP -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- SCRIPT -->
+    <script>
+        const sendRequestBtn = document.getElementById('sendRequestBtn');
+
+        sendRequestBtn.addEventListener('click', async () => {
+
+            const apiUrl = document.getElementById('apiUrl').value;
+            const httpMethod = document.getElementById('httpMethod').value;
+            const requestBody = document.getElementById('requestBody').value;
+
+            const responseOutput = document.getElementById('responseOutput');
+            const statusBox = document.getElementById('statusBox');
+
+            responseOutput.value = 'Loading response...';
+            statusBox.innerHTML = 'Sending request...';
+
+            try {
+
+                let options = {
+                    method: httpMethod,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                };
+
+                if (httpMethod !== 'GET' && httpMethod !== 'DELETE') {
+                    options.body = requestBody;
+                }
+
+                const response = await fetch(apiUrl, options);
+
+                const data = await response.text();
+
+                statusBox.innerHTML = `
+                    Status: ${response.status} ${response.statusText}
+                `;
+
+                try {
+                    responseOutput.value = JSON.stringify(JSON.parse(data), null, 2);
+                } catch {
+                    responseOutput.value = data;
+                }
+
+            } catch (error) {
+
+                statusBox.innerHTML = 'Request Failed';
+                responseOutput.value = error;
+
+            }
+
+        });
+    </script>
+
+</body>
+</html>
