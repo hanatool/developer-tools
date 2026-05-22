@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0' name='viewport' />
+    <meta name="description"
+        content="Free Online HTML Formatter Tool - Beautify, format, and clean your HTML code instantly. Fast, modern, and easy to use.">
+    <meta name="keywords" content="HTML formatter, HTML beautifier, code formatter, online tools, web tools">
+    <meta name="author" content="HTML Formatter Tool">
+
+    <title>HTML Formatter Tool - Free Online Code Beautifier</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light text-dark">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fa-solid fa-code"></i> HTML Formatter
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="fw-bold text-primary">HTML Formatter Tool</h1>
+            <p class="text-muted">
+                Beautify, clean, and format your HTML code instantly with a modern online tool.
+            </p>
+        </div>
+    </header>
+
+    <!-- ADS TOP -->
+    <div class="container my-3">
+        <div class="p-3 text-center bg-light border rounded">
+            <small class="text-muted">Advertisement Space</small>
+            <div class="fw-bold">Your Ad Here</div>
+        </div>
+    </div>
+
+    <!-- MAIN TOOL -->
+    <div class="container my-4">
+        <div class="row g-3">
+
+            <!-- INPUT -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white fw-bold">
+                        <i class="fa-solid fa-code"></i> Input HTML
+                    </div>
+                    <div class="card-body">
+                        <textarea id="inputHTML" class="form-control" rows="15"
+                            placeholder="Paste your HTML here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OUTPUT -->
+            <div class="col-lg-6">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-white fw-bold">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i> Formatted HTML
+                    </div>
+                    <div class="card-body">
+                        <textarea id="outputHTML" class="form-control" rows="15" readonly
+                            placeholder="Formatted HTML will appear here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- BUTTONS -->
+        <div class="text-center my-3">
+            <button class="btn btn-primary px-4" onclick="formatHTML()">
+                <i class="fa-solid fa-magic-wand-sparkles"></i> Format HTML
+            </button>
+
+            <button class="btn btn-secondary px-4" onclick="copyOutput()">
+                <i class="fa-solid fa-copy"></i> Copy Result
+            </button>
+
+            <button class="btn btn-danger px-4" onclick="clearAll()">
+                <i class="fa-solid fa-trash"></i> Clear
+            </button>
+        </div>
+    </div>
+
+    <!-- ADS BOTTOM -->
+    <div class="container my-4">
+        <div class="p-3 text-center bg-light border rounded">
+            <small class="text-muted">Advertisement Space</small>
+            <div class="fw-bold">Your Ad Banner Here</div>
+        </div>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="container my-5 bg-white p-4 rounded shadow-sm">
+        <h4 class="fw-bold text-primary">About This Tool</h4>
+        <p class="text-muted">
+            This HTML Formatter helps you clean and organize messy HTML code into a readable structure.
+            It is fast, lightweight, and works directly in your browser without any installation.
+        </p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 HTML Formatter Tool. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function formatHTML() {
+            let input = document.getElementById("inputHTML").value;
+
+            if (!input.trim()) {
+                alert("Please enter HTML code first!");
+                return;
+            }
+
+            let formatted = html_beautify(input);
+            document.getElementById("outputHTML").value = formatted;
+        }
+
+        // Simple HTML beautifier
+        function html_beautify(html) {
+            let indent = 0;
+            let result = "";
+            let tokens = html.replace(/>\s*</g, "><").split(/(?=<)|(?<=>)/g);
+
+            tokens.forEach(token => {
+                if (token.match(/<\/\w/)) {
+                    indent--;
+                }
+
+                result += "  ".repeat(indent) + token + "\n";
+
+                if (token.match(/<\w[^>]*[^\/]>$/)) {
+                    indent++;
+                }
+            });
+
+            return result.trim();
+        }
+
+        function copyOutput() {
+            let output = document.getElementById("outputHTML");
+            output.select();
+            document.execCommand("copy");
+            alert("Copied to clipboard!");
+        }
+
+        function clearAll() {
+            document.getElementById("inputHTML").value = "";
+            document.getElementById("outputHTML").value = "";
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

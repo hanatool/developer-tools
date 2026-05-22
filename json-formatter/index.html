@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free online JSON Formatter tool to beautify, validate, and organize JSON data instantly with a clean modern interface.">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free online JSON Formatter tool to beautify, validate, and organize JSON data instantly with a clean modern interface.">
     <meta name="keywords" content="JSON Formatter, JSON Beautifier, JSON Validator, Online JSON Tool, Format JSON">
     <meta name="author" content="JSON Formatter Tool">
     <meta name="robots" content="index, follow">
@@ -17,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
+
 <body class="bg-light text-dark">
 
     <!-- HEADER -->
@@ -57,7 +61,8 @@
         <div class="container text-center">
             <h1 class="fw-bold mb-3">Free Online JSON Formatter</h1>
             <p class="text-secondary mx-auto" style="max-width: 750px;">
-                Beautify, validate, and organize your JSON data instantly with this modern and responsive JSON Formatter tool. 
+                Beautify, validate, and organize your JSON data instantly with this modern and responsive JSON Formatter
+                tool.
                 Perfect for developers, students, and API testing workflows.
             </p>
         </div>
@@ -88,12 +93,8 @@
                                 JSON Input
                             </label>
 
-                            <textarea 
-                                id="jsonInput"
-                                class="form-control"
-                                rows="18"
-                                placeholder='Paste your JSON here...'
-                            ></textarea>
+                            <textarea id="jsonInput" class="form-control" rows="18"
+                                placeholder='Paste your JSON here...'></textarea>
                         </div>
 
                         <!-- OUTPUT -->
@@ -103,13 +104,8 @@
                                 Formatted Output
                             </label>
 
-                            <textarea 
-                                id="jsonOutput"
-                                class="form-control"
-                                rows="18"
-                                readonly
-                                placeholder="Formatted JSON will appear here..."
-                            ></textarea>
+                            <textarea id="jsonOutput" class="form-control" rows="18" readonly
+                                placeholder="Formatted JSON will appear here..."></textarea>
                         </div>
 
                     </div>
@@ -146,7 +142,8 @@
                     <h2 class="h4 fw-bold mb-3">About This Tool</h2>
 
                     <p class="text-secondary mb-3">
-                        This JSON Formatter helps you clean and structure JSON data with proper indentation and validation. 
+                        This JSON Formatter helps you clean and structure JSON data with proper indentation and
+                        validation.
                         It is useful for debugging APIs, editing configuration files, and improving code readability.
                     </p>
 
@@ -215,7 +212,6 @@
 
     <!-- JSON FORMATTER SCRIPT -->
     <script>
-
         function formatJSON() {
             const input = document.getElementById('jsonInput').value;
             const output = document.getElementById('jsonOutput');
@@ -272,8 +268,8 @@
             document.getElementById('jsonOutput').value = "";
             document.getElementById('statusMessage').innerHTML = "";
         }
-
     </script>
 
 </body>
+
 </html>

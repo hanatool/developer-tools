@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Free HEX to RGB and RGB to HEX converter tool. Fast, simple, and responsive online color converter.">
+    <meta name="keywords" content="hex to rgb, rgb to hex, color converter, online tools, css colors">
+    <meta name="author" content="Color Tools">
+
+    <title>HEX ⇄ RGB Converter Tool</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body class="bg-light text-dark">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="fa-solid fa-palette"></i> ColorTools
+            </a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="py-5 text-center bg-white border-bottom">
+        <div class="container">
+            <h1 class="fw-bold text-primary">HEX ⇄ RGB Converter</h1>
+            <p class="text-muted">
+                Convert HEX to RGB and RGB to HEX instantly with a clean and simple tool.
+            </p>
+        </div>
+    </header>
+
+    <div class="container my-4">
+
+        <!-- AD SPACE TOP -->
+        <div class="alert alert-secondary text-center">
+            <strong>Advertisement Space</strong><br>
+            Your ad can be placed here
+        </div>
+
+        <!-- TOOL CARD -->
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+
+                <div class="card shadow-sm border-0">
+                    <div class="card-body">
+
+                        <ul class="nav nav-pills mb-3" id="pills-tab">
+                            <li class="nav-item">
+                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#hexToRgb">
+                                    HEX → RGB
+                                </button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#rgbToHex">
+                                    RGB → HEX
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+
+                            <!-- HEX TO RGB -->
+                            <div class="tab-pane fade show active" id="hexToRgb">
+                                <label class="form-label">HEX Color</label>
+                                <input type="text" id="hexInput" class="form-control" placeholder="#ff0000">
+
+                                <button class="btn btn-primary w-100 mt-3" onclick="hexToRgb()">
+                                    Convert
+                                </button>
+
+                                <div class="mt-3 p-3 bg-light border rounded">
+                                    <strong>Result:</strong>
+                                    <div id="rgbResult">---</div>
+                                </div>
+                            </div>
+
+                            <!-- RGB TO HEX -->
+                            <div class="tab-pane fade" id="rgbToHex">
+                                <div class="row">
+                                    <div class="col">
+                                        <input type="number" id="r" class="form-control" placeholder="R">
+                                    </div>
+                                    <div class="col">
+                                        <input type="number" id="g" class="form-control" placeholder="G">
+                                    </div>
+                                    <div class="col">
+                                        <input type="number" id="b" class="form-control" placeholder="B">
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-success w-100 mt-3" onclick="rgbToHex()">
+                                    Convert
+                                </button>
+
+                                <div class="mt-3 p-3 bg-light border rounded">
+                                    <strong>Result:</strong>
+                                    <div id="hexResult">---</div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- AD SPACE BOTTOM -->
+        <div class="alert alert-secondary text-center mt-4">
+            <strong>Advertisement Space</strong><br>
+            Your ad can be placed here
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="mt-4 bg-white p-4 rounded shadow-sm">
+            <h4>About This Tool</h4>
+            <p class="text-muted">
+                This HEX ⇄ RGB converter helps designers and developers quickly convert color codes.
+                It is lightweight, responsive, and works instantly without reload.
+            </p>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-primary text-white text-center py-3 mt-5">
+        <div class="container">
+            <small>
+                © 2026 ColorTools. Built with Bootstrap 5. All rights reserved.
+            </small>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        function hexToRgb() {
+            let hex = document.getElementById("hexInput").value.replace("#", "");
+
+            if (hex.length !== 6) {
+                document.getElementById("rgbResult").innerHTML = "Invalid HEX format";
+                return;
+            }
+
+            let r = parseInt(hex.substring(0, 2), 16);
+            let g = parseInt(hex.substring(2, 4), 16);
+            let b = parseInt(hex.substring(4, 6), 16);
+
+            document.getElementById("rgbResult").innerHTML = `RGB(${r}, ${g}, ${b})`;
+        }
+
+        function rgbToHex() {
+            let r = parseInt(document.getElementById("r").value) || 0;
+            let g = parseInt(document.getElementById("g").value) || 0;
+            let b = parseInt(document.getElementById("b").value) || 0;
+
+            let hex =
+                "#" +
+                r.toString(16).padStart(2, '0') +
+                g.toString(16).padStart(2, '0') +
+                b.toString(16).padStart(2, '0');
+
+            document.getElementById("hexResult").innerHTML = hex.toUpperCase();
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

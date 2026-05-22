@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free online MIME Type Checker tool to instantly detect file MIME types based on extensions. Fast, responsive, and modern Bootstrap design.">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free online MIME Type Checker tool to instantly detect file MIME types based on extensions. Fast, responsive, and modern Bootstrap design.">
     <meta name="keywords" content="mime type checker, file mime type, mime detector, extension checker, bootstrap tool">
     <meta name="author" content="Hanapha Tools">
     <meta name="robots" content="index, follow">
@@ -17,10 +20,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
+
 <body class="bg-light text-dark">
 
     <!-- HEADER -->
-    <header class="border-bottom bg-white shadow-none sticky-top">
+    <header class="border-bottom bg-white sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light container">
             <a class="navbar-brand fw-bold" href="#">
                 <i class="fa-solid fa-file-circle-check text-primary me-2"></i>
@@ -55,7 +59,8 @@
             </h1>
 
             <p class="text-secondary mx-auto" style="max-width: 700px;">
-                Instantly detect MIME types from file extensions using this fast and modern online MIME Type Checker tool.
+                Instantly detect MIME types from file extensions using this fast and modern online MIME Type Checker
+                tool.
                 Perfect for developers, website owners, students, and content creators.
             </p>
         </div>
@@ -109,12 +114,8 @@
                                         <i class="fa-solid fa-file"></i>
                                     </span>
 
-                                    <input 
-                                        type="text" 
-                                        id="extensionInput"
-                                        class="form-control"
-                                        placeholder="Example: jpg, png, pdf"
-                                    >
+                                    <input type="text" id="extensionInput" class="form-control"
+                                        placeholder="Example: jpg, png, pdf">
 
                                     <button class="btn btn-primary px-4" id="checkBtn">
                                         <i class="fa-solid fa-magnifying-glass me-2"></i>
@@ -206,7 +207,10 @@
             </div>
 
             <p class="mb-0 text-secondary small">
-                © 2026 MIME Type Checker. All rights reserved.
+                © <script type='text/javascript'>
+                    var creditsyear = new Date();
+                    document.write(creditsyear.getFullYear());
+                </script> MIME Type Checker. All rights reserved.
             </p>
 
         </div>
@@ -273,7 +277,7 @@
 
         checkBtn.addEventListener("click", checkMimeType);
 
-        extensionInput.addEventListener("keypress", function(e) {
+        extensionInput.addEventListener("keypress", function (e) {
             if (e.key === "Enter") {
                 checkMimeType();
             }
@@ -281,4 +285,5 @@
     </script>
 
 </body>
+
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>IP Lookup Tool - Free IP Address Checker</title>
 
-    <meta name="description" content="Free modern IP Lookup tool to check IP address details including country, city, ISP, timezone, and location information instantly." />
+    <meta name="description"
+        content="Free modern IP Lookup tool to check IP address details including country, city, ISP, timezone, and location information instantly." />
     <meta name="keywords" content="ip lookup, ip checker, ip address finder, geo ip lookup, ip tracker, ip location" />
     <meta name="author" content="IP Lookup Tool" />
 
@@ -17,6 +19,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
+
 <body class="bg-light text-dark">
 
     <!-- HEADER -->
@@ -71,12 +74,8 @@
                         <div class="card-body p-4">
 
                             <div class="input-group input-group-lg">
-                                <input
-                                    type="text"
-                                    id="ipInput"
-                                    class="form-control"
-                                    placeholder="Enter IP address (example: 8.8.8.8)"
-                                >
+                                <input type="text" id="ipInput" class="form-control"
+                                    placeholder="Enter IP address (example: 8.8.8.8)">
 
                                 <button class="btn btn-primary" id="lookupBtn">
                                     <i class="fa-solid fa-magnifying-glass me-2"></i>
@@ -225,7 +224,8 @@
 
                     <p class="text-secondary mb-0">
                         The tool is fully responsive, lightweight, and optimized for desktop and mobile devices.
-                        Perfect for developers, network administrators, bloggers, and internet users who need fast IP information.
+                        Perfect for developers, network administrators, bloggers, and internet users who need fast IP
+                        information.
                     </p>
 
                 </div>
@@ -287,9 +287,9 @@
 
             try {
 
-                let url = ip
-                    ? `https://ipapi.co/${ip}/json/`
-                    : `https://ipapi.co/json/`;
+                let url = ip ?
+                    `https://ipapi.co/${ip}/json/` :
+                    `https://ipapi.co/json/`;
 
                 const response = await fetch(url);
                 const data = await response.json();
@@ -318,7 +318,7 @@
 
             const ip = document.getElementById('ipInput').value.trim();
 
-            if(ip === '') {
+            if (ip === '') {
                 alert('Please enter an IP address');
                 return;
             }
@@ -333,8 +333,8 @@
 
         // Auto Detect User IP On Load
         lookupIP();
-
     </script>
 
 </body>
+
 </html>

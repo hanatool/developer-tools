@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free online cURL Generator tool to create cURL commands instantly from API requests with headers, methods, and body data.">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free online cURL Generator tool to create cURL commands instantly from API requests with headers, methods, and body data.">
     <meta name="keywords" content="curl generator, api tool, curl command generator, developer tools, rest api">
     <meta name="author" content="Your Website">
     <meta name="robots" content="index, follow">
@@ -20,7 +23,8 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light" style="font-family: 'Inter', sans-serif;">
+
+<body class="bg-light text-dark">
 
     <!-- Header -->
     <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
@@ -98,12 +102,8 @@
                                     API URL
                                 </label>
 
-                                <input
-                                    type="text"
-                                    id="apiUrl"
-                                    class="form-control form-control-lg"
-                                    placeholder="https://api.example.com/users"
-                                >
+                                <input type="text" id="apiUrl" class="form-control form-control-lg"
+                                    placeholder="https://api.example.com/users">
                             </div>
 
                             <!-- Method -->
@@ -127,12 +127,8 @@
                                     Headers
                                 </label>
 
-                                <textarea
-                                    id="headers"
-                                    class="form-control"
-                                    rows="4"
-                                    placeholder='Content-Type: application/json'
-                                ></textarea>
+                                <textarea id="headers" class="form-control" rows="4"
+                                    placeholder='Content-Type: application/json'></textarea>
                             </div>
 
                             <!-- Body -->
@@ -141,28 +137,18 @@
                                     Request Body
                                 </label>
 
-                                <textarea
-                                    id="requestBody"
-                                    class="form-control"
-                                    rows="6"
-                                    placeholder='{"name":"John"}'
-                                ></textarea>
+                                <textarea id="requestBody" class="form-control" rows="6"
+                                    placeholder='{"name":"John"}'></textarea>
                             </div>
 
                             <!-- Buttons -->
                             <div class="d-grid gap-3 d-md-flex">
-                                <button
-                                    class="btn btn-primary btn-lg px-4"
-                                    onclick="generateCurl()"
-                                >
+                                <button class="btn btn-primary btn-lg px-4" onclick="generateCurl()">
                                     <i class="fa-solid fa-terminal me-2"></i>
                                     Generate cURL
                                 </button>
 
-                                <button
-                                    class="btn btn-outline-secondary btn-lg px-4"
-                                    onclick="copyCurl()"
-                                >
+                                <button class="btn btn-outline-secondary btn-lg px-4" onclick="copyCurl()">
                                     <i class="fa-regular fa-copy me-2"></i>
                                     Copy
                                 </button>
@@ -174,12 +160,7 @@
                                     Generated cURL Command
                                 </label>
 
-                                <textarea
-                                    id="curlOutput"
-                                    class="form-control bg-light"
-                                    rows="8"
-                                    readonly
-                                ></textarea>
+                                <textarea id="curlOutput" class="form-control bg-light" rows="8" readonly></textarea>
                             </div>
 
                         </div>
@@ -228,7 +209,10 @@
             </p>
 
             <p class="text-muted small mb-0">
-                © 2026 All Rights Reserved. Built with Bootstrap 5.
+                © <script type='text/javascript'>
+                    var creditsyear = new Date();
+                    document.write(creditsyear.getFullYear());
+                </script> All Rights Reserved. Built with Bootstrap 5.
             </p>
         </div>
     </footer>
@@ -278,4 +262,5 @@
     </script>
 
 </body>
+
 </html>

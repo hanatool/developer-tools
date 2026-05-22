@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free User Agent Parser tool to analyze browser, operating system, device, and rendering engine information instantly.">
-    <meta name="keywords" content="user agent parser, browser detector, device checker, operating system parser, bootstrap tool">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free User Agent Parser tool to analyze browser, operating system, device, and rendering engine information instantly.">
+    <meta name="keywords"
+        content="user agent parser, browser detector, device checker, operating system parser, bootstrap tool">
     <meta name="author" content="User Agent Parser">
     <meta name="robots" content="index, follow">
 
@@ -19,10 +23,11 @@
     <!-- UA Parser -->
     <script src="https://cdn.jsdelivr.net/npm/ua-parser-js@1.0.39/src/ua-parser.min.js"></script>
 </head>
+
 <body class="bg-light text-dark">
 
     <!-- HEADER -->
-    <header class="border-bottom bg-white shadow-none sticky-top">
+    <header class="border-bottom bg-white sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="#">
@@ -105,12 +110,8 @@
                         User-Agent Input
                     </h3>
 
-                    <textarea
-                        id="userAgentInput"
-                        class="form-control form-control-lg"
-                        rows="6"
-                        placeholder="Paste a user-agent string here or use your current browser user-agent automatically."
-                    ></textarea>
+                    <textarea id="userAgentInput" class="form-control form-control-lg" rows="6"
+                        placeholder="Paste a user-agent string here or use your current browser user-agent automatically."></textarea>
 
                     <div class="d-flex flex-wrap gap-2 mt-3">
                         <button class="btn btn-primary" onclick="parseUserAgent()">
@@ -263,7 +264,10 @@
             </div>
 
             <small class="text-secondary">
-                © 2026 User-Agent Parser. All rights reserved.
+                © <script type='text/javascript'>
+                    var creditsyear = new Date();
+                    document.write(creditsyear.getFullYear());
+                </script> User-Agent Parser. All rights reserved.
             </small>
         </div>
     </footer>
@@ -325,4 +329,5 @@
     </script>
 
 </body>
+
 </html>

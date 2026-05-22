@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free Regex Generator Tool to create regular expressions instantly with live preview and testing.">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free Regex Generator Tool to create regular expressions instantly with live preview and testing.">
     <meta name="keywords" content="regex generator, regular expression tool, regex builder, regex tester, online regex">
     <meta name="author" content="Regex Generator">
     <meta name="robots" content="index, follow">
@@ -17,6 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
+
 <body class="bg-light text-dark">
 
     <!-- HEADER -->
@@ -104,10 +108,7 @@
                                     Enter Text or Pattern Description
                                 </label>
 
-                                <textarea 
-                                    id="inputText"
-                                    class="form-control"
-                                    rows="5"
+                                <textarea id="inputText" class="form-control" rows="5"
                                     placeholder="Example: Email validation, phone number, password with uppercase and numbers..."></textarea>
                             </div>
 
@@ -162,11 +163,7 @@
                                 </label>
 
                                 <div class="input-group">
-                                    <input 
-                                        type="text"
-                                        id="regexOutput"
-                                        class="form-control"
-                                        readonly
+                                    <input type="text" id="regexOutput" class="form-control" readonly
                                         placeholder="Your regex pattern will appear here">
                                 </div>
                             </div>
@@ -351,17 +348,13 @@
 
             if (input.includes('email')) {
                 regex = '^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$';
-            } 
-            else if (input.includes('phone')) {
+            } else if (input.includes('phone')) {
                 regex = '^\\\\+?[0-9]{10,15}$';
-            } 
-            else if (input.includes('password')) {
+            } else if (input.includes('password')) {
                 regex = '^(?=.*[A-Z])(?=.*\\\\d).{8,}$';
-            } 
-            else if (input.includes('url')) {
+            } else if (input.includes('url')) {
                 regex = 'https?:\\\\/\\\\/(www\\\\.)?.+';
-            } 
-            else {
+            } else {
                 regex = '.*';
             }
 
@@ -400,4 +393,5 @@
     </script>
 
 </body>
+
 </html>

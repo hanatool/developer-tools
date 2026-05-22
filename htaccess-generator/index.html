@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free .htaccess Generator Tool to create redirects, password protection, caching rules, custom errors, and more with an easy modern interface.">
-    <meta name="keywords" content="htaccess generator, apache htaccess, redirect generator, rewrite rule, password protection, cache control">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free .htaccess Generator Tool to create redirects, password protection, caching rules, custom errors, and more with an easy modern interface.">
+    <meta name="keywords"
+        content="htaccess generator, apache htaccess, redirect generator, rewrite rule, password protection, cache control">
     <meta name="author" content="HTAccess Generator">
     <meta name="robots" content="index, follow">
 
@@ -18,8 +22,9 @@
 
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
 
-    <body class="bg-light" style="font-family: 'Inter', sans-serif;">
+<body class="bg-light text-dark">
 
     <!-- HEADER -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
@@ -124,12 +129,8 @@
                                         Redirect URL
                                     </label>
 
-                                    <input
-                                        type="text"
-                                        class="form-control form-control-lg"
-                                        id="redirectUrl"
-                                        placeholder="https://example.com"
-                                    >
+                                    <input type="text" class="form-control form-control-lg" id="redirectUrl"
+                                        placeholder="https://example.com">
                                 </div>
 
                                 <!-- Error Page -->
@@ -138,12 +139,8 @@
                                         Custom 404 Page
                                     </label>
 
-                                    <input
-                                        type="text"
-                                        class="form-control form-control-lg"
-                                        id="errorPage"
-                                        placeholder="/404.html"
-                                    >
+                                    <input type="text" class="form-control form-control-lg" id="errorPage"
+                                        placeholder="/404.html">
                                 </div>
 
                                 <!-- Options -->
@@ -194,12 +191,8 @@
                                         Generated .htaccess Code
                                     </label>
 
-                                    <textarea
-                                        class="form-control"
-                                        rows="14"
-                                        id="result"
-                                        placeholder="Your generated .htaccess code will appear here..."
-                                    ></textarea>
+                                    <textarea class="form-control" rows="14" id="result"
+                                        placeholder="Your generated .htaccess code will appear here..."></textarea>
                                 </div>
 
                                 <!-- Copy -->
@@ -336,24 +329,24 @@
             const disableListing = document.getElementById('disableListing').checked;
 
             // HTTPS
-            if(forceHttps){
+            if (forceHttps) {
                 code += "RewriteEngine On\n";
                 code += "RewriteCond %{HTTPS} off\n";
                 code += "RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]\n\n";
             }
 
             // Redirect
-            if(redirectUrl !== ""){
+            if (redirectUrl !== "") {
                 code += "Redirect 301 / " + redirectUrl + "\n\n";
             }
 
             // 404
-            if(errorPage !== ""){
+            if (errorPage !== "") {
                 code += "ErrorDocument 404 " + errorPage + "\n\n";
             }
 
             // Cache
-            if(enableCache){
+            if (enableCache) {
                 code += "<IfModule mod_expires.c>\n";
                 code += "ExpiresActive On\n";
                 code += "ExpiresByType image/jpg \"access plus 1 year\"\n";
@@ -365,11 +358,11 @@
             }
 
             // Disable listing
-            if(disableListing){
+            if (disableListing) {
                 code += "Options -Indexes\n\n";
             }
 
-            if(code === ""){
+            if (code === "") {
                 code = "# No configuration selected.";
             }
 
@@ -384,7 +377,7 @@
             navigator.clipboard.writeText(result.value);
 
             copyBtn.innerHTML = '<i class="fa-solid fa-check me-2"></i>Copied';
-            
+
             setTimeout(() => {
                 copyBtn.innerHTML = '<i class="fa-regular fa-copy me-2"></i>Copy Code';
             }, 2000);
@@ -393,4 +386,5 @@
     </script>
 
 </body>
+
 </html>

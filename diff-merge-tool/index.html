@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free online Diff Merge Tool to compare and merge text differences instantly with a clean and responsive interface.">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free online Diff Merge Tool to compare and merge text differences instantly with a clean and responsive interface.">
     <meta name="keywords" content="diff merge tool, compare text, merge differences, online diff checker, text compare">
     <meta name="author" content="Hanapha Tools">
     <meta name="robots" content="index, follow">
@@ -19,62 +22,9 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #f8f9fa;
-        }
-
-        .hero-box {
-            border-radius: 20px;
-            background: #ffffff;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.05);
-        }
-
-        textarea {
-            min-height: 350px;
-            resize: vertical;
-            font-size: 15px;
-        }
-
-        .result-box {
-            min-height: 250px;
-            background: #fff;
-            border-radius: 15px;
-            border: 1px solid #dee2e6;
-            white-space: pre-wrap;
-            overflow-wrap: break-word;
-        }
-
-        .ad-box {
-            background: #ffffff;
-            border: 2px dashed #ced4da;
-            border-radius: 15px;
-            min-height: 120px;
-        }
-
-        footer {
-            background: #ffffff;
-            border-top: 1px solid #e9ecef;
-        }
-
-        .diff-added {
-            background: #d1e7dd;
-            color: #0f5132;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-
-        .diff-removed {
-            background: #f8d7da;
-            color: #842029;
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-    </style>
 </head>
 
-<body>
+<body class="bg-light text-dark">
 
     <!-- Header -->
     <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
@@ -121,7 +71,8 @@
                     </h1>
 
                     <p class="text-secondary mx-auto" style="max-width: 750px;">
-                        Compare two text files instantly and highlight differences in a clean, fast, and modern interface. Perfect for developers, writers, and content editors.
+                        Compare two text files instantly and highlight differences in a clean, fast, and modern
+                        interface. Perfect for developers, writers, and content editors.
                     </p>
                 </div>
 
@@ -141,7 +92,8 @@
                                 <h5 class="mb-0">Original Text</h5>
                             </div>
 
-                            <textarea id="text1" class="form-control" placeholder="Paste original text here..."></textarea>
+                            <textarea id="text1" class="form-control"
+                                placeholder="Paste original text here..."></textarea>
                         </div>
                     </div>
 
@@ -153,7 +105,8 @@
                                 <h5 class="mb-0">Modified Text</h5>
                             </div>
 
-                            <textarea id="text2" class="form-control" placeholder="Paste modified text here..."></textarea>
+                            <textarea id="text2" class="form-control"
+                                placeholder="Paste modified text here..."></textarea>
                         </div>
                     </div>
 
@@ -194,11 +147,14 @@
                         </h4>
 
                         <p class="text-secondary mb-3">
-                            This online diff merge tool helps you quickly compare text differences between two documents or code snippets. It highlights added, removed, and modified lines to improve accuracy and productivity.
+                            This online diff merge tool helps you quickly compare text differences between two documents
+                            or code snippets. It highlights added, removed, and modified lines to improve accuracy and
+                            productivity.
                         </p>
 
                         <p class="text-secondary mb-0">
-                            Designed with a minimal and responsive Bootstrap layout, the tool works smoothly across desktop, tablet, and mobile devices without requiring installation.
+                            Designed with a minimal and responsive Bootstrap layout, the tool works smoothly across
+                            desktop, tablet, and mobile devices without requiring installation.
                         </p>
                     </div>
                 </div>
@@ -213,12 +169,15 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-4 mt-4">
+    <footer class="py-4 mt-4 bg-white border-top">
         <div class="container">
             <div class="row align-items-center">
 
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    <strong>Diff Merge Tool</strong> © 2026
+                    <strong>Diff Merge Tool</strong> © <script type='text/javascript'>
+                        var creditsyear = new Date();
+                        document.write(creditsyear.getFullYear());
+                    </script>
                 </div>
 
                 <div class="col-md-6 text-center text-md-end">
@@ -301,4 +260,5 @@
     </script>
 
 </body>
+
 </html>

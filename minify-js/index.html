@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JS Minifier Tool - Free Online JavaScript Minify</title>
+    <meta name="description"
+        content="Free online JavaScript minifier tool. Quickly minify and compress your JS code to improve performance and reduce file size.">
+    <meta name="keywords" content="javascript minifier, js minify, code compressor, online tools, minify js">
+    <meta name="author" content="Simple Tools">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light text-dark">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-dark" href="#">
+                <i class="fa-solid fa-code text-primary"></i> JS Minifier
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Tools</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="py-5 bg-white border-bottom">
+        <div class="container text-center">
+            <h1 class="fw-bold text-primary">JavaScript Minifier Tool</h1>
+            <p class="text-muted">
+                Minify your JavaScript code instantly. Remove whitespace, comments, and reduce file size for better
+                performance.
+            </p>
+        </div>
+    </header>
+
+    <!-- Ad Section Top -->
+    <div class="container my-3">
+        <div class="p-3 bg-white border text-center rounded">
+            <small class="text-muted">Advertisement</small>
+            <div class="mt-2">
+                <div class="bg-light border rounded py-5">Ad Space 728x90</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tool Section -->
+    <div class="container my-4">
+        <div class="row g-3">
+
+            <!-- Input -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white">
+                        <i class="fa-solid fa-file-code"></i> Input JavaScript
+                    </div>
+                    <div class="card-body">
+                        <textarea id="inputCode" class="form-control" rows="12"
+                            placeholder="Paste your JavaScript code here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Output -->
+            <div class="col-md-6">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-success text-white">
+                        <i class="fa-solid fa-bolt"></i> Minified Output
+                    </div>
+                    <div class="card-body">
+                        <textarea id="outputCode" class="form-control" rows="12" readonly
+                            placeholder="Minified code will appear here..."></textarea>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Button -->
+        <div class="text-center my-3">
+            <button class="btn btn-primary px-4" onclick="minifyJS()">
+                <i class="fa-solid fa-magic-wand-sparkles"></i> Minify Now
+            </button>
+            <button class="btn btn-outline-secondary px-4" onclick="copyOutput()">
+                <i class="fa-solid fa-copy"></i> Copy
+            </button>
+        </div>
+    </div>
+
+    <!-- Ad Section Middle -->
+    <div class="container my-4">
+        <div class="p-3 bg-white border text-center rounded">
+            <small class="text-muted">Advertisement</small>
+            <div class="mt-2 bg-light border rounded py-5">Ad Space 300x250</div>
+        </div>
+    </div>
+
+    <!-- Description Section -->
+    <section class="py-5 bg-white border-top border-bottom">
+        <div class="container">
+            <h3 class="fw-bold text-primary">About This Tool</h3>
+            <p class="text-muted">
+                This JavaScript Minifier helps developers compress their code by removing unnecessary spaces, line
+                breaks, and comments.
+                It improves website loading speed and performance while keeping functionality intact.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-top py-4 mt-4">
+        <div class="container text-center">
+            <p class="mb-0 text-muted">
+                © 2026 JS Minifier Tool. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Tool Script -->
+    <script>
+        function minifyJS() {
+            let code = document.getElementById("inputCode").value;
+
+            // Simple minify: remove comments, extra spaces, and line breaks
+            let minified = code
+                .replace(/\/\*[\s\S]*?\*\//g, '') // remove block comments
+                .replace(/\/\/.*$/gm, '') // remove line comments
+                .replace(/\n/g, '') // remove new lines
+                .replace(/\t/g, '') // remove tabs
+                .replace(/\s{2,}/g, ' ') // collapse spaces
+                .trim();
+
+            document.getElementById("outputCode").value = minified;
+        }
+
+        function copyOutput() {
+            let output = document.getElementById("outputCode");
+            output.select();
+            document.execCommand("copy");
+
+            alert("Minified code copied!");
+        }
+    </script>
+
+</body>
+
+</html>

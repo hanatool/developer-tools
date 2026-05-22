@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free online JavaScript Obfuscator tool to protect and encrypt your JavaScript source code instantly.">
-    <meta name="keywords" content="javascript obfuscator, js obfuscator, code protection, javascript encryptor, online tool">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free online JavaScript Obfuscator tool to protect and encrypt your JavaScript source code instantly.">
+    <meta name="keywords"
+        content="javascript obfuscator, js obfuscator, code protection, javascript encryptor, online tool">
     <meta name="author" content="Hanapha Tools">
     <meta name="robots" content="index, follow">
 
@@ -24,10 +28,10 @@
 <body class="bg-light" style="font-family: Inter, sans-serif;">
 
     <!-- HEADER -->
-    <header class="border-bottom bg-white shadow-none sticky-top">
+    <header class="border-bottom bg-white sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand fw-bold fs-4 text-dark" href="#">
+                <a class="navbar-brand fw-bold text-dark" href="#">
                     <i class="fa-solid fa-shield-halved text-primary me-2"></i>
                     JS Obfuscator
                 </a>
@@ -95,8 +99,7 @@
                     Advertisement
                 </p>
 
-                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center"
-                     style="height:120px;">
+                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center" style="height:120px;">
                     <span class="text-muted">
                         728 x 90 Ad Banner
                     </span>
@@ -116,10 +119,8 @@
                                     Input JavaScript Code
                                 </label>
 
-                                <textarea id="inputCode"
-                                          class="form-control"
-                                          rows="12"
-                                          placeholder="Paste your JavaScript code here..."></textarea>
+                                <textarea id="inputCode" class="form-control" rows="12"
+                                    placeholder="Paste your JavaScript code here..."></textarea>
                             </div>
 
                             <div class="d-flex flex-wrap gap-3 mb-4">
@@ -145,11 +146,8 @@
                                     Obfuscated Output
                                 </label>
 
-                                <textarea id="outputCode"
-                                          class="form-control"
-                                          rows="12"
-                                          placeholder="Your obfuscated code will appear here..."
-                                          readonly></textarea>
+                                <textarea id="outputCode" class="form-control" rows="12"
+                                    placeholder="Your obfuscated code will appear here..." readonly></textarea>
                             </div>
 
                         </div>
@@ -192,8 +190,7 @@
                     Sponsored Content
                 </p>
 
-                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center"
-                     style="height:250px;">
+                <div class="bg-light rounded-3 d-flex align-items-center justify-content-center" style="height:250px;">
                     <span class="text-muted">
                         300 x 250 Advertisement Area
                     </span>
@@ -238,7 +235,10 @@
             <hr>
 
             <div class="text-center text-secondary small">
-                © 2026 JS Obfuscator. All rights reserved.
+                © <script type='text/javascript'>
+                    var creditsyear = new Date();
+                    document.write(creditsyear.getFullYear());
+                </script> JS Obfuscator. All rights reserved.
             </div>
 
         </div>
@@ -266,7 +266,7 @@
             const encoded = btoa(unescape(encodeURIComponent(code)));
 
             const result =
-`eval(atob("${encoded}"));`;
+                `eval(atob("${encoded}"));`;
 
             outputCode.value = result;
         });
@@ -297,4 +297,5 @@
     </script>
 
 </body>
+
 </html>

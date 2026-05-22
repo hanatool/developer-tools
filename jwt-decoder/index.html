@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Free online JWT Decoder tool to decode and read JSON Web Tokens instantly. Fast, secure, responsive, and easy to use.">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free online JWT Decoder tool to decode and read JSON Web Tokens instantly. Fast, secure, responsive, and easy to use.">
     <meta name="keywords" content="JWT Decoder, JSON Web Token, JWT Parser, JWT Tool, Decode JWT Online">
     <meta name="author" content="JWT Decoder Tool">
     <meta name="robots" content="index, follow">
@@ -18,6 +21,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 </head>
+
 <body class="bg-light text-dark">
 
     <!-- Header -->
@@ -86,12 +90,8 @@
                         JWT Token
                     </label>
 
-                    <textarea 
-                        class="form-control form-control-lg"
-                        id="jwtInput"
-                        rows="8"
-                        placeholder="Paste your JWT token here..."
-                    ></textarea>
+                    <textarea class="form-control form-control-lg" id="jwtInput" rows="8"
+                        placeholder="Paste your JWT token here..."></textarea>
                 </div>
 
                 <!-- Buttons -->
@@ -230,7 +230,7 @@ Waiting for token...
             return decodeURIComponent(
                 atob(str)
                 .split('')
-                .map(function(c) {
+                .map(function (c) {
                     return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
                 })
                 .join('')
@@ -275,4 +275,5 @@ Waiting for token...
     </script>
 
 </body>
+
 </html>

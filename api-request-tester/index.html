@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- META -->
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
 
     <!-- SEO -->
     <title>API Request Tester - Modern Bootstrap Tool</title>
-    <meta name="description" content="Modern API Request Tester built with Bootstrap 5. Test GET, POST, PUT, PATCH, and DELETE requests easily.">
+    <meta name="description"
+        content="Modern API Request Tester built with Bootstrap 5. Test GET, POST, PUT, PATCH, and DELETE requests easily.">
     <meta name="keywords" content="API Tester, REST API, Bootstrap API Tool, JSON Tester, API Request Tool">
     <meta name="author" content="Hanapha">
     <meta name="robots" content="index, follow">
@@ -27,7 +30,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
-<body class="bg-light" style="font-family: 'Inter', sans-serif;">
+
+<body class="bg-light text-dark">
 
     <!-- HEADER -->
     <header class="border-bottom bg-white sticky-top">
@@ -141,12 +145,8 @@
                                     API Endpoint URL
                                 </label>
 
-                                <input
-                                    type="text"
-                                    class="form-control form-control-lg"
-                                    id="apiUrl"
-                                    placeholder="https://jsonplaceholder.typicode.com/posts/1"
-                                >
+                                <input type="text" class="form-control form-control-lg" id="apiUrl"
+                                    placeholder="https://jsonplaceholder.typicode.com/posts/1">
                             </div>
 
                             <!-- METHOD -->
@@ -170,16 +170,11 @@
                                     JSON Body
                                 </label>
 
-                                <textarea
-                                    class="form-control"
-                                    id="requestBody"
-                                    rows="8"
-                                    placeholder='{
+                                <textarea class="form-control" id="requestBody" rows="8" placeholder='{
   "title": "Example",
   "body": "Hello API",
   "userId": 1
-}'
-                                ></textarea>
+}'></textarea>
                             </div>
 
                             <!-- BUTTON -->
@@ -207,13 +202,8 @@
                                     API Response
                                 </label>
 
-                                <textarea
-                                    class="form-control"
-                                    id="responseOutput"
-                                    rows="14"
-                                    readonly
-                                    placeholder="Response will appear here..."
-                                ></textarea>
+                                <textarea class="form-control" id="responseOutput" rows="14" readonly
+                                    placeholder="Response will appear here..."></textarea>
                             </div>
 
                         </div>
@@ -337,4 +327,5 @@
     </script>
 
 </body>
+
 </html>

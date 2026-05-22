@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free online JWT Generator tool to create JSON Web Tokens instantly with custom payloads, headers, and secret keys.">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free online JWT Generator tool to create JSON Web Tokens instantly with custom payloads, headers, and secret keys.">
     <meta name="keywords" content="JWT Generator, JSON Web Token, Token Generator, Online JWT Tool, JWT Encode">
     <meta name="author" content="JWT Generator Tool">
 
@@ -19,6 +22,7 @@
     <!-- Favicon -->
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2092/2092663.png">
 </head>
+
 <body class="bg-light text-dark">
 
     <!-- Header -->
@@ -116,11 +120,7 @@
                                     JWT Header
                                 </label>
 
-                                <textarea 
-                                    class="form-control"
-                                    id="jwtHeader"
-                                    rows="5"
-                                >{
+                                <textarea class="form-control" id="jwtHeader" rows="5">{
   "alg": "HS256",
   "typ": "JWT"
 }</textarea>
@@ -132,11 +132,7 @@
                                     JWT Payload
                                 </label>
 
-                                <textarea 
-                                    class="form-control"
-                                    id="jwtPayload"
-                                    rows="8"
-                                >{
+                                <textarea class="form-control" id="jwtPayload" rows="8">{
   "user_id": 12345,
   "name": "John Doe",
   "role": "admin"
@@ -149,13 +145,8 @@
                                     Secret Key
                                 </label>
 
-                                <input 
-                                    type="text"
-                                    class="form-control"
-                                    id="secretKey"
-                                    placeholder="Enter your secret key"
-                                    value="my-secret-key"
-                                >
+                                <input type="text" class="form-control" id="secretKey"
+                                    placeholder="Enter your secret key" value="my-secret-key">
                             </div>
 
                             <!-- Buttons -->
@@ -182,13 +173,8 @@
                                     Generated JWT Token
                                 </label>
 
-                                <textarea 
-                                    class="form-control"
-                                    id="jwtOutput"
-                                    rows="6"
-                                    readonly
-                                    placeholder="Your generated JWT token will appear here..."
-                                ></textarea>
+                                <textarea class="form-control" id="jwtOutput" rows="6" readonly
+                                    placeholder="Your generated JWT token will appear here..."></textarea>
                             </div>
 
                         </div>
@@ -327,4 +313,5 @@
     </script>
 
 </body>
+
 </html>

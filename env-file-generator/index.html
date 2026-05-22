@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Generate .env files instantly with this modern ENV File Generator tool. Fast, responsive, clean, and easy to use.">
-    <meta name="keywords" content="env file generator, dotenv generator, environment variables, .env creator, bootstrap tool">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Generate .env files instantly with this modern ENV File Generator tool. Fast, responsive, clean, and easy to use.">
+    <meta name="keywords"
+        content="env file generator, dotenv generator, environment variables, .env creator, bootstrap tool">
     <meta name="author" content="ENV File Generator">
     <meta name="robots" content="index, follow">
 
@@ -22,13 +26,14 @@
 
     <!-- Bootstrap Utility Only -->
 </head>
-<body class="bg-light" style="font-family: 'Inter', sans-serif;">
+
+<body class="bg-light text-dark">
 
     <!-- HEADER -->
     <header class="border-bottom bg-white sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
-                <a class="navbar-brand fw-bold fs-4" href="#">
+                <a class="navbar-brand fw-bold text-dark" href="#">
                     <i class="fa-solid fa-file-code text-primary me-2"></i>
                     ENV File Generator
                 </a>
@@ -75,7 +80,7 @@
                     </h1>
 
                     <p class="text-secondary fs-5 mb-4">
-                        Generate clean and professional .env configuration files for your applications. 
+                        Generate clean and professional .env configuration files for your applications.
                         Easy to use, responsive, fast, and perfect for developers.
                     </p>
 
@@ -99,7 +104,7 @@
                             <small class="text-muted">Preview</small>
                         </div>
 
-<pre class="mb-0 text-dark small">
+                        <pre class="mb-0 text-dark small">
 APP_NAME=MyApplication
 APP_ENV=production
 APP_DEBUG=false
@@ -144,10 +149,7 @@ API_KEY=your_api_key_here
                                     Environment Variables
                                 </label>
 
-                                <textarea 
-                                    id="envInput"
-                                    class="form-control"
-                                    rows="12"
+                                <textarea id="envInput" class="form-control" rows="12"
                                     placeholder="APP_NAME=MyApp&#10;APP_ENV=production&#10;APP_KEY=your_secret_key">
                                 </textarea>
                             </div>
@@ -176,11 +178,7 @@ API_KEY=your_api_key_here
                                     Generated Output
                                 </label>
 
-                                <textarea 
-                                    id="envOutput"
-                                    class="form-control bg-light"
-                                    rows="12"
-                                    readonly>
+                                <textarea id="envOutput" class="form-control bg-light" rows="12" readonly>
                                 </textarea>
                             </div>
 
@@ -341,4 +339,5 @@ API_KEY=your_api_key_here
     </script>
 
 </body>
+
 </html>

@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Meta Tags -->
     <meta charset="UTF-8">
-    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport' />
-    <meta name="description" content="Free online YAML to JSON converter tool. Convert YAML data into JSON format instantly with a modern and responsive interface.">
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no'
+        name='viewport' />
+    <meta name="description"
+        content="Free online YAML to JSON converter tool. Convert YAML data into JSON format instantly with a modern and responsive interface.">
     <meta name="keywords" content="YAML to JSON, JSON converter, YAML parser, online converter, developer tools">
     <meta name="author" content="YAML JSON Converter">
     <meta name="robots" content="index, follow">
@@ -20,10 +23,11 @@
     <!-- YAML Parser -->
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 </head>
+
 <body class="bg-light text-dark">
 
     <!-- Header -->
-    <header class="border-bottom bg-white shadow-none sticky-top">
+    <header class="border-bottom bg-white sticky-top">
         <nav class="navbar navbar-expand-lg navbar-light bg-white">
             <div class="container">
                 <a class="navbar-brand fw-bold" href="#">
@@ -98,12 +102,8 @@
                         </div>
 
                         <div class="card-body">
-                            <textarea 
-                                id="yamlInput"
-                                class="form-control"
-                                rows="18"
-                                placeholder="Paste your YAML here..."
-                            >name: John Doe
+                            <textarea id="yamlInput" class="form-control" rows="18"
+                                placeholder="Paste your YAML here...">name: John Doe
 email: john@example.com
 skills:
   - HTML
@@ -117,7 +117,8 @@ active: true</textarea>
                 <!-- JSON Output -->
                 <div class="col-lg-6">
                     <div class="card border-0 shadow-sm h-100">
-                        <div class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
+                        <div
+                            class="card-header bg-white border-bottom d-flex justify-content-between align-items-center">
                             <h5 class="mb-0">
                                 <i class="fa-solid fa-brackets-curly text-success me-2"></i>
                                 JSON Output
@@ -130,12 +131,7 @@ active: true</textarea>
                         </div>
 
                         <div class="card-body">
-                            <textarea 
-                                id="jsonOutput"
-                                class="form-control"
-                                rows="18"
-                                readonly
-                            ></textarea>
+                            <textarea id="jsonOutput" class="form-control" rows="18" readonly></textarea>
                         </div>
                     </div>
                 </div>
@@ -162,13 +158,16 @@ active: true</textarea>
                 </h3>
 
                 <p class="text-secondary">
-                    YAML JSON Converter is a free online utility that allows you to quickly transform YAML data into valid JSON format.
-                    This tool is perfect for developers working with APIs, configuration files, cloud services, automation scripts,
+                    YAML JSON Converter is a free online utility that allows you to quickly transform YAML data into
+                    valid JSON format.
+                    This tool is perfect for developers working with APIs, configuration files, cloud services,
+                    automation scripts,
                     and modern web applications.
                 </p>
 
                 <p class="text-secondary mb-0">
-                    The interface is lightweight, responsive, mobile-friendly, and designed with a clean Bootstrap layout for the best user experience.
+                    The interface is lightweight, responsive, mobile-friendly, and designed with a clean Bootstrap
+                    layout for the best user experience.
                 </p>
             </div>
 
@@ -183,7 +182,10 @@ active: true</textarea>
             </p>
 
             <small class="text-secondary">
-                © 2026 All Rights Reserved. Built with Bootstrap 5.
+                © <script type='text/javascript'>
+                    var creditsyear = new Date();
+                    document.write(creditsyear.getFullYear());
+                </script> All Rights Reserved. Built with Bootstrap 5.
             </small>
         </div>
     </footer>
@@ -232,4 +234,5 @@ active: true</textarea>
     </script>
 
 </body>
+
 </html>
