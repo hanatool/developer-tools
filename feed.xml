@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+
+    <title>Hanapha Developer Tools</title>
+    <link>https://tools.hanapha.com/developer-tools/</link>
+    <description>Collection of free online developer tools including formatter, converter, generator, tester, encoder, decoder, and minifier utilities.</description>
+    <language>en-us</language>
+
+    <item>
+      <title>API Request Tester</title>
+      <link>https://tools.hanapha.com/developer-tools/api-request-tester</link>
+      <description>Test API requests online quickly and easily.</description>
+    </item>
+
+    <item>
+      <title>Base64 Encoder Decoder</title>
+      <link>https://tools.hanapha.com/developer-tools/base64-encoder-decoder</link>
+      <description>Encode and decode Base64 text instantly.</description>
+    </item>
+
+    <item>
+      <title>Beautify Code</title>
+      <link>https://tools.hanapha.com/developer-tools/beautify-code</link>
+      <description>Beautify and format source code online.</description>
+    </item>
+
+    <item>
+      <title>Color Picker</title>
+      <link>https://tools.hanapha.com/developer-tools/color-picker</link>
+      <description>Pick colors and generate HEX/RGB values.</description>
+    </item>
+
+    <item>
+      <title>CSS Minifier</title>
+      <link>https://tools.hanapha.com/developer-tools/css-minifier</link>
+      <description>Compress and minify CSS code online.</description>
+    </item>
+
+    <item>
+      <title>CSV JSON Converter</title>
+      <link>https://tools.hanapha.com/developer-tools/csv-json-converter</link>
+      <description>Convert CSV data to JSON format and vice versa.</description>
+    </item>
+
+    <item>
+      <title>DNS Lookup</title>
+      <link>https://tools.hanapha.com/developer-tools/dns-lookup</link>
+      <description>Lookup DNS records online.</description>
+    </item>
+
+    <item>
+      <title>Hash Generator</title>
+      <link>https://tools.hanapha.com/developer-tools/hash-generator</link>
+      <description>Generate secure hashes instantly.</description>
+    </item>
+
+    <item>
+      <title>HTML Formatter</title>
+      <link>https://tools.hanapha.com/developer-tools/html-formatter</link>
+      <description>Format and beautify HTML code.</description>
+    </item>
+
+    <item>
+      <title>JSON Formatter</title>
+      <link>https://tools.hanapha.com/developer-tools/json-formatter</link>
+      <description>Validate and format JSON data online.</description>
+    </item>
+
+    <item>
+      <title>JWT Decoder</title>
+      <link>https://tools.hanapha.com/developer-tools/jwt-decoder</link>
+      <description>Decode JWT tokens easily.</description>
+    </item>
+
+    <item>
+      <title>Regex Tester</title>
+      <link>https://tools.hanapha.com/developer-tools/regex-tester</link>
+      <description>Test regular expressions online.</description>
+    </item>
+
+    <item>
+      <title>UUID Generator</title>
+      <link>https://tools.hanapha.com/developer-tools/uuid-generator</link>
+      <description>Generate random UUID values instantly.</description>
+    </item>
+
+    <item>
+      <title>XML Formatter</title>
+      <link>https://tools.hanapha.com/developer-tools/xml-formatter</link>
+      <description>Beautify and format XML code online.</description>
+    </item>
+
+  </channel>
+</rss>
